@@ -8,14 +8,15 @@ session_start();
 
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtmll/DTD/xhtmll-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 
 <head>
-    <title>User provide login information</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="../../Styles (css)/login.css">
 </head>
 
-<body style="font-family: arial, sans-serif; background-color: lightgreen">
+<body>
 
     <?php
 
@@ -34,22 +35,32 @@ session_start();
 
     ?>
 
-    <h2>Click Login to save your session data.</h2>
+    <div class="login-box">
 
-    <form method="post" action="sessionHandler.php" style="font-size: l0pt">
+        <h2>Login</h2>
 
-        <strong>Username:</strong><br>
-        <input type="text" name="username">
-        <br>
+        <form method="post" action="sessionHandler.php" style="font-size: l0pt">
 
-        <strong>Password:</strong><br>
-        <input type="password" name="password">
-        <br><br>
+            <div class="user-box">
+                <input type="text" name="username" required="">
+                <label>Username</label>
+            </div>
 
-        <input type="submit" value="Login" style="background-color: #F0E86C; color: navy; font-weight: bold">
-        <input type="reset" value="Reset"></p>
+            <div class="user-box">
+                <input type="password" name="password" required="">
+                <label>Password</label>
+            </div>
 
-    </form>
+            <a href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <button type="submit">Login</button>
+            </a>
+        </form>
+
+    </div>
 
 </body>
 

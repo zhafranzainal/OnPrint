@@ -31,13 +31,13 @@ if ($errflag) {
 // Connect to MySQL server
 $mysql = mysqli_connect("localhost", "root", "") or die(mysqli_connect_error());
 
-// Select the database named "mydatabase"
-mysqli_select_db($mysql, "mydatabase") or die(mysqli_connect_error());
+// Select the database named "onprint"
+mysqli_select_db($mysql, "onprint") or die(mysqli_connect_error());
 
-// Write SQL statement that selects the record from table named "profile"
+// Write SQL statement that selects the record from table named "users"
 $name = $_POST['username'];
 $pass = $_POST['password'];
-$query = "SELECT * FROM profile WHERE username = '$name' AND password = '$pass'";
+$query = "SELECT * FROM users WHERE username = '$name' AND password = '$pass'";
 
 // To run SQL query in database
 $result = mysqli_query($mysql, $query) or die(mysqli_error($mysql));
@@ -49,8 +49,7 @@ if (isset($result)) {
         session_regenerate_id();
         $member = mysqli_fetch_assoc($result);
         $_SESSION['SESS_MEMBER_ID'] = $member['id'];
-        $_SESSION['SESS_FIRST_NAME'] = $member['firstname'];
-        $_SESSION['SESS_LAST_NAME'] = $member['lastname'];
+        $_SESSION['SESS_NAME'] = $member['name'];
         $_SESSION['STATUS'] = true;
         session_write_close();
         header("location: login-successful.php");

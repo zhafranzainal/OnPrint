@@ -6,7 +6,7 @@
 
 include("authenticator.php");
 
-echo "<h3>Congratulations, " . $_SESSION['SESS_FIRST_NAME'] . "" . $_SESSION['SESS_LAST_NAME'] . "! Login Successfully :)</h3><br>";
+echo "<h3>Congratulations, " . $_SESSION['SESS_NAME'] . "! Login Successfully :)</h3><br>";
 
 ?>
 

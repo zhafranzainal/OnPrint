@@ -5,12 +5,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Checkout Menu</title>
+    <title>Delivery</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../../Styles (css)/style.css">
+    <link rel="stylesheet" href="../../Styles (css)/table.css">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
         integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
@@ -31,7 +32,7 @@
                         <li><a href="../index1.html">Home</a></li>
                         <li><a href="../(3) Printing Order/order.html">Order</a></li>
                         <li><a href="../(4) Payment/payment.html">Payment</a></li>
-                        <li><a href="../(5) Order Acceptance/delivery-note.html">Delivery</a></li>
+                        <li><a href="#">Delivery</a></li>
                         <li><a href="../(6) Sales and Admin/admin.html">Sales and Admin</a></li>
                     </ul>
                 </div>
@@ -64,9 +65,11 @@
                 </div>
             </div>
             <div class="col-md-3 mt-2" id="icons">
-                <div style="cursor: pointer;" class="circle float-right" data-toggle="modal" data-target="#loginModal"
-                    data-toggle="tooltip" data-placement="top" title="LOGIN & SIGNUP"><i
-                        class="fas fa-user text-primary"></i></div>
+                <a href="../(2) User/profile.html">
+                    <div class="circle float-right" title="Manage Profile">
+                        <i class="fas fa-user text-primary"></i>
+                    </div>
+                </a>
 
                 <a href="cart.html">
                     <div class="circle float-right mr-2"><i class="fas fa-shopping-cart text-primary"></i><sup><span
@@ -111,8 +114,23 @@
                         </a>
 
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="campus-pekan.html">UMP Pekan</a>
-                            <a class="dropdown-item" href="campus-gambang.html">UMP Gambang</a>
+                            <a class="dropdown-item" href="#">UMP Pekan</a>
+                            <a class="dropdown-item" href="#">UMP Gambang</a>
+                        </div>
+
+                    </li>
+
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                            aria-expanded="false">
+                            Delivery (Rider)
+                        </a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="delivery-note.html">Notes</a>
+                            <a class="dropdown-item" href="#">Record</a>
+                            <a class="dropdown-item" href="delivery-report.html">Report</a>
                         </div>
 
                     </li>
@@ -123,119 +141,86 @@
         </nav>
     </div>
     <hr>
-    <br>
 
-    <h3 class="text-center">Checkout</h3>
-    <br>
-    <br><br>
+    <div class="container">
+        <div class="fulfillmentbatch fulfillmentsearch">
 
+            <div class="gap15"></div>
+            <div class="gap15"></div>
 
-    <div class="container" id="card">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="card p-4" id="cards">
-                    <h5 class="text-dark pl-4">Billing Details</h5>
+            <div class="row">
+                <div class="panel panel-default claim-panel-table">
 
-                    <form class="mt-4">
-                        <div class="row mx-1">
-                            <div class="col">
-                                <input type="text" class="form-control" placeholder="Display Name">
-                            </div>
-                            <div class="col">
-                                <input type="text" class="form-control" placeholder="Full Name">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">List of Printing Orders</h3>
+                    </div>
 
-                            </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped">
+
+                                <thead>
+                                    <tr>
+                                        <th>Receipt ID</th>
+                                        <th>Client Name</th>
+                                        <th>Outlet Name</th>
+                                        <th>Category Name</th>
+                                        <th>Quantity</th>
+                                        <th>Payment Status</th>
+                                        <th>Total Payment</th>
+                                        <th>Delivery Location</th>
+                                        <th>Order Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Mohammed Basirin Nazmi</td>
+                                        <td>Cooperative Ltd, UMP Pekan</td>
+                                        <td>Comb Bind Notebook</td>
+                                        <td>11</td>
+                                        <td>Successful</td>
+                                        <td>88.00</td>
+                                        <td>91, Jalan 4P, Kampung Permai, 32305 Kuala Krau, Pahang</td>
+                                        <td>Prepared</td>
+                                        <td><a href="">Pick up</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Mohammed Basirin Nazmi</td>
+                                        <td>Cooperative Ltd, UMP Pekan</td>
+                                        <td>Comb Bind Notebook</td>
+                                        <td>11</td>
+                                        <td>Successful</td>
+                                        <td>88.00</td>
+                                        <td>91, Jalan 4P, Kampung Permai, 32305 Kuala Krau, Pahang</td>
+                                        <td>Picked up</td>
+                                        <td><a href="">Arrive</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Mohammed Basirin Nazmi</td>
+                                        <td>Cooperative Ltd, UMP Pekan</td>
+                                        <td>Comb Bind Notebook</td>
+                                        <td>11</td>
+                                        <td>Successful</td>
+                                        <td>88.00</td>
+                                        <td>91, Jalan 4P, Kampung Permai, 32305 Kuala Krau, Pahang</td>
+                                        <td>Completed</td>
+                                        <td style="color: gray;">Arrive</td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
                         </div>
-                        <br>
-                        <div class="col ml-1">
-                            <input type="text" class="form-control" placeholder="Company Name (optional)">
+                    </div>
 
-                        </div>
-                        <br>
-                        <div class="col ml-1">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                placeholder="Address"></textarea>
-
-                        </div>
-                        <br>
-
-                        <div class="col ml-1">
-                            <input type="number" class="form-control" placeholder="Pincode">
-
-
-                        </div>
-                        <br>
-                        <div class="col ml-1">
-                            <input type="text" class="form-control" placeholder="Town / City">
-
-                        </div>
-                        <br>
-
-                        <div class="col ml-1">
-                            <input type="email" class="form-control" placeholder="Email Address">
-                        </div>
-                        <br>
-                        <div class="col ml-1">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text bg-light">+91</span>
-                                </div>
-                                <input type="number" class="form-control" placeholder="Phone Number">
-
-                            </div>
-
-                        </div>
-                        <div class="col ml-1">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                placeholder="Additional Information"></textarea>
-
-                        </div>
-                        <br>
-                        <br>
-                        <div class="form-check form-check-inline ml-4">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">&nbsp;
-                            <label class="form-check-label text-uppercase" for="inlineCheckbox1">Create an
-                                account?</label>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card p-3" id="card-cost">
-                    <h5 class="text-primary pl-2">Total Amount</h5>
-                    <table class="table table-borderless pt-2">
-
-                        <tbody>
-                            <tr>
-                                <th scope="row" class="font-weight-light">Product Amount</th>
-                                <td>RM179.00</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="font-weight-light">Shipping</th>
-                                <td>RM100.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <hr>
-                    <h6 class="pl-2 pt-1">Total Price <span class="float-right">RM279.00</span></h6>
-                    <hr>
-                    <form class="mt-4">
-                        <div class="form-group row">
-                            <div class="col-sm-12">
-                                <h6>Have a Coupon Code? Enter Below</h6>
-                                <input type="number" class="form-control border-0 pl-1" placeholder="x x x x x x">
-                                <hr class="mt-0">
-                            </div>
-                        </div>
-                    </form>
-                    <button class="btn btn-primary mt-2"><a href="checkout.html" class="text-white">Make
-                            Purchase</a></button>
                 </div>
             </div>
 
         </div>
-
     </div>
 
     <footer class="footer pt-5 pb-5" id="footer">
@@ -257,12 +242,15 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
     integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
+
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
+
 <script src="js/script.js"></script>
 
 </html>

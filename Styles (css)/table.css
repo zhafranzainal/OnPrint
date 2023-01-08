@@ -1,0 +1,143 @@
+.fulfillmentbatch {
+  width: 100%;
+  padding: 10px;
+}
+
+.fulfillmentbatch .gap15 {
+  height: 15px;
+}
+
+.fulfillmentbatch .height100 {
+  margin-left: 0px;
+  height: 100%;
+}
+
+@media only screen and (min-width:768px) {
+  .fulfillmentbatch #promotion {
+    width: 73%;
+  }
+
+  .fulfillmentbatch .calculate .form-group:first-of-type {
+    padding-left: 0;
+  }
+
+  .fulfillmentbatch .calculate .form-group span .form-control {
+    width: 56%;
+  }
+}
+
+@media only screen and (min-width:768px) and (max-width:991px) {
+  .fulfillmentbatch .calculate .form-group {
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (max-width:767px) {
+  .fulfillmentbatch .calculate .form-group span {
+    display: block;
+  }
+
+  .fulfillmentbatch .calculate .form-group span .form-control {
+    width: 93%;
+    display: inline-block;
+  }
+}
+
+@media only screen and (max-width:991px) {
+  .fulfillmentbatch .search-btn {
+    margin-top: 0px;
+  }
+}
+
+.fulfillmentbatch .bs-border {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.fulfillmentbatch .cust-fieldset {
+  position: relative;
+  padding: 18px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.fulfillmentbatch .calculate .form-group span label.fa.fa-2x {
+  transform: translate(5px, 5px);
+}
+
+.fulfillmentbatch .cust-legend {
+  position: absolute;
+  background: #fff;
+  top: -11px;
+  left: 0;
+  display: inline-block;
+  margin-left: 16px;
+  font-weight: bold;
+}
+
+.fulfillmentbatch .claim-panel-table tbody td:first-child {
+  text-align: center;
+}
+
+.fulfillmentbatch .claim-panel-table thead th,
+.fulfill-panel-table thead th {
+  background: #eeeeee;
+}
+
+.fulfillmentbatch .panel-footer-whitebg {
+  border-top: none;
+  background: #fff;
+}
+
+.fulfillmentbatch .fulfill-panel-table .panel-body {
+  padding-bottom: 0px;
+}
+
+.fulfillmentbatch .btn-grey {
+  background: #ccc;
+}
+
+.fulfillmentbatch .mar-r-18 {
+  margin-right: 18px;
+}
+
+.fulfillmentbatch #log {
+  width: 100%;
+  height: 100%;
+  padding: 6px;
+}
+
+.fulfillmentbatch .row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.fulfillmentbatch .form-group.col-md-3 {
+  padding: 0;
+}
+
+.fulfillmentsearch .clear-btn {
+  margin-right: 20px;
+}
+
+@media only screen and (min-width:768px) {
+  .fulfillmentsearch .calculate .clearfix+.form-group {
+    padding-left: 0;
+  }
+
+  .fulfillmentsearch .calculate .form-group span .form-control {
+    width: 50%;
+  }
+}
+
+.fulfillmentsearch .calculate .form-group span .form-control {
+  display: inline-block;
+}
+
+.fulfillmentsearch #promotion {
+  width: 100%;
+}

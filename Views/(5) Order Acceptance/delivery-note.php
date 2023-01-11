@@ -157,51 +157,59 @@
                                         <th>Category Name</th>
                                         <th>Quantity</th>
                                         <th>Payment Status</th>
-                                        <th>Total Payment</th>
-                                        <th>Delivery Location</th>
-                                        <th>Order Status</th>
+
                                         <th>Action</th>
                                     </tr>
                                 </thead>
 
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Mohammed Basirin Nazmi</td>
-                                        <td>Cooperative Ltd, UMP Pekan</td>
-                                        <td>Comb Bind Notebook</td>
-                                        <td>11</td>
-                                        <td>Successful</td>
-                                        <td>88.00</td>
-                                        <td>91, Jalan 4P, Kampung Permai, 32305 Kuala Krau, Pahang</td>
-                                        <td>Prepared</td>
-                                        <td><a href="">Pick up</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Mohammed Basirin Nazmi</td>
-                                        <td>Cooperative Ltd, UMP Pekan</td>
-                                        <td>Comb Bind Notebook</td>
-                                        <td>11</td>
-                                        <td>Successful</td>
-                                        <td>88.00</td>
-                                        <td>91, Jalan 4P, Kampung Permai, 32305 Kuala Krau, Pahang</td>
-                                        <td>Picked up</td>
-                                        <td><a href="">Arrive</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Mohammed Basirin Nazmi</td>
-                                        <td>Cooperative Ltd, UMP Pekan</td>
-                                        <td>Comb Bind Notebook</td>
-                                        <td>11</td>
-                                        <td>Successful</td>
-                                        <td>88.00</td>
-                                        <td>91, Jalan 4P, Kampung Permai, 32305 Kuala Krau, Pahang</td>
-                                        <td>Completed</td>
-                                        <td style="color: gray;">Arrive</td>
-                                    </tr>
-                                </tbody>
+                                <?php
+
+                                // 1. Connect to MySQL server
+                                $mysql = mysqli_connect("localhost", "root", "") or die(mysqli_connect_error());
+
+                                // 2. Select the database named "onprint"
+                                mysqli_select_db($mysql, "onprint") or die(mysqli_error($mysql));
+
+                                // 3. Write SQL statement that selects the record from table named "receipts"
+                                $query = "SELECT * FROM receipts";
+
+                                // To run SQL query in database
+                                $result = mysqli_query($mysql, $query);
+
+                                // Check whether or not the table has existing data
+                                if (mysqli_num_rows($result) > 0) {
+
+                                    // Output data of each row
+                                    while ($row = mysqli_fetch_assoc($result)) {
+
+                                        $receipt_id = $row["id"];
+                                        $client_name = $row["user_id"];
+                                        $outlet_name = $row["address_id"];
+                                        $category_name = $row["payment_method_id"];
+                                        $quantity = $row["order_id"];
+                                        $payment_status = $row["status"];
+
+                                ?>
+
+                                        <tbody>
+                                            <tr>
+                                                <td><?php echo $receipt_id; ?></td>
+                                                <td><?php echo $client_name; ?></td>
+                                                <td><?php echo $outlet_name; ?></td>
+                                                <td><?php echo $category_name; ?></td>
+                                                <td><?php echo $quantity; ?></td>
+                                                <td><?php echo $payment_status; ?></td>
+
+                                                <td><a href="">Pick up</a></td>
+                                            </tr>
+                                        </tbody>
+
+                                <?php
+                                    }
+                                } else {
+                                    echo "0 results";
+                                }
+                                ?>
 
                             </table>
                         </div>

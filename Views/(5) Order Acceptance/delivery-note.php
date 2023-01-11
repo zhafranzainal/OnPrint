@@ -157,6 +157,9 @@
                                         <th>Category Name</th>
                                         <th>Quantity</th>
                                         <th>Payment Status</th>
+                                        <th>Total Payment</th>
+                                        <th>Delivery Location</th>
+                                        <th>Order Status</th>
 
                                         <th>Action</th>
                                     </tr>
@@ -171,7 +174,9 @@
                                 mysqli_select_db($mysql, "onprint") or die(mysqli_error($mysql));
 
                                 // 3. Write SQL statement that selects the record from table named "receipts"
-                                $query = "SELECT * FROM receipts";
+                                $query = "SELECT r.id, u.name, t.name AS outlet_name, c.name AS category_name, o.quantity, r.status, o.total_price, a.unit_no, a.street_name, a.residential_area, a.postal_code, b.name AS city_name, n.name AS state_name, o.status AS order_status
+                                FROM receipts r, users u, orders o, outlets t, packages p, categories c, addresses a, cities b, states n
+                                WHERE r.user_id = u.id AND r.order_id = o.id AND o.outlet_id = t.id AND o.package_id = p.id AND p.category_id = c.id AND r.address_id = a.id AND a.city_id = b.id AND a.state_id = n.id";
 
                                 // To run SQL query in database
                                 $result = mysqli_query($mysql, $query);
@@ -182,23 +187,29 @@
                                     // Output data of each row
                                     while ($row = mysqli_fetch_assoc($result)) {
 
-                                        $receipt_id = $row["id"];
-                                        $client_name = $row["user_id"];
-                                        $outlet_name = $row["address_id"];
-                                        $category_name = $row["payment_method_id"];
-                                        $quantity = $row["order_id"];
-                                        $payment_status = $row["status"];
+                                        $receiptId = $row["id"];
+                                        $clientName = $row["name"];
+                                        $outletName = $row["outlet_name"];
+                                        $categoryName = $row["category_name"];
+                                        $quantity = $row["quantity"];
+                                        $paymentStatus = $row["status"];
+                                        $totalPayment = $row["total_price"];
+                                        $deliveryLocation = $row["unit_no"] . ", " . $row["street_name"] . ", " . $row["residential_area"] . ", " . $row["postal_code"] . ", " . $row["city_name"] . ", " . $row["state_name"];
+                                        $orderStatus = $row["order_status"];
 
                                 ?>
 
                                         <tbody>
                                             <tr>
-                                                <td><?php echo $receipt_id; ?></td>
-                                                <td><?php echo $client_name; ?></td>
-                                                <td><?php echo $outlet_name; ?></td>
-                                                <td><?php echo $category_name; ?></td>
+                                                <td><?php echo $receiptId; ?></td>
+                                                <td><?php echo $clientName; ?></td>
+                                                <td><?php echo $outletName; ?></td>
+                                                <td><?php echo $categoryName; ?></td>
                                                 <td><?php echo $quantity; ?></td>
-                                                <td><?php echo $payment_status; ?></td>
+                                                <td><?php echo $paymentStatus; ?></td>
+                                                <td><?php echo $totalPayment; ?></td>
+                                                <td><?php echo $deliveryLocation; ?></td>
+                                                <td><?php echo $orderStatus; ?></td>
 
                                                 <td><a href="">Pick up</a></td>
                                             </tr>

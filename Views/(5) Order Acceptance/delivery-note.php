@@ -35,6 +35,7 @@
         $query = "UPDATE orders SET status = 'picked up' WHERE id = $idURL";
         $result = mysqli_query($mysql, $query) or die(mysqli_error($mysql));
     }
+
     ?>
 
     <div class="top-header bg-primary">

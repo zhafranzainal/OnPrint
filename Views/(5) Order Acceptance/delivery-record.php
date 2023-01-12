@@ -20,25 +20,6 @@
 
 <body>
 
-    <?php
-
-    // 1. Connect to MySQL server
-    $mysql = mysqli_connect("localhost", "root", "") or die(mysqli_connect_error());
-
-    // 2. Select the database named "onprint"
-    mysqli_select_db($mysql, "onprint") or die(mysqli_error($mysql));
-
-    if (isset($_GET['id'])) {
-
-        $idURL = $_GET['id'];
-
-        // Write SQL statement that updates the record from table named "orders"
-        $query = "UPDATE orders SET status = 'picked up' WHERE id = $idURL";
-        $result = mysqli_query($mysql, $query) or die(mysqli_error($mysql));
-    }
-
-    ?>
-
     <div class="top-header bg-primary">
         <div class="container">
             <div class="row">
@@ -189,7 +170,7 @@
                                 // 2. Select the database named "onprint"
                                 mysqli_select_db($mysql, "onprint") or die(mysqli_error($mysql));
 
-                                // 3. Write SQL statement that selects the record from table named "receipts"
+                                // 3. Write SQL statement that selects the record from table named "deliveries"
                                 $query = "SELECT d.id, u.name, t.name AS outlet_name, k.name as campus_name, c.name AS category_name, o.quantity, a.unit_no, a.street_name, a.residential_area, a.postal_code, b.name AS city_name, n.name AS state_name, o.status AS order_status, d.commission_fee
                                 FROM deliveries d, receipts r, users u, orders o, outlets t, campuses k, packages p, categories c, addresses a, cities b, states n
                                 WHERE d.receipt_id = r.id AND r.user_id = u.id AND r.order_id = o.id AND o.outlet_id = t.id AND t.campus_id = k.id AND o.package_id = p.id AND p.category_id = c.id AND r.address_id = a.id AND a.city_id = b.id AND a.state_id = n.id AND o.status = 'completed'
@@ -267,7 +248,7 @@
                                 // 2. Select the database named "onprint"
                                 mysqli_select_db($mysql, "onprint") or die(mysqli_error($mysql));
 
-                                // 3. Write SQL statement that selects the record from table named "receipts"
+                                // 3. Write SQL statement that selects the record from table named "complaints"
                                 $query = "SELECT * FROM complaints ORDER BY id";
 
                                 // To run SQL query in database
@@ -292,9 +273,13 @@
                                                 <td><?php echo $complaintId; ?></td>
                                                 <td><?php echo $deliveryId; ?></td>
                                                 <td><?php echo $description; ?></td>
-                                                <td><?php echo $status; ?></td>
+                                                <td><?php echo ucfirst($status); ?></td>
                                                 <td><?php echo $date_received; ?></td>
-                                                <td><a href="delivery-note.php?id=<?php echo $deliveryId; ?>">Pick up</a></td>
+                                                <?php if ($status != 'closed' && $status != 'resolved') : ?>
+                                                    <td><a href="delivery-feedback.php?id=<?php echo $complaintId; ?>">Give feedback</a></td>
+                                                <?php else : ?>
+                                                    <td>-</td>
+                                                <?php endif; ?>
                                             </tr>
                                         </tbody>
 

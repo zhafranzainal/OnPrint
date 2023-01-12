@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Delivery</title>
+    <title>Delivery Record</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -170,13 +170,91 @@
 
                                 <thead>
                                     <tr>
-                                        <th>Receipt ID</th>
+                                        <th>Delivery ID</th>
                                         <th>Client Name</th>
                                         <th>Outlet Name</th>
                                         <th>Category Name</th>
                                         <th>Quantity</th>
                                         <th>Delivery Location</th>
                                         <th>Order Status</th>
+                                        <th>Commission Fee</th>
+                                    </tr>
+                                </thead>
+
+                                <?php
+
+                                // 1. Connect to MySQL server
+                                $mysql = mysqli_connect("localhost", "root", "") or die(mysqli_connect_error());
+
+                                // 2. Select the database named "onprint"
+                                mysqli_select_db($mysql, "onprint") or die(mysqli_error($mysql));
+
+                                // 3. Write SQL statement that selects the record from table named "receipts"
+                                $query = "SELECT d.id, u.name, t.name AS outlet_name, k.name as campus_name, c.name AS category_name, o.quantity, a.unit_no, a.street_name, a.residential_area, a.postal_code, b.name AS city_name, n.name AS state_name, o.status AS order_status, d.commission_fee
+                                FROM deliveries d, receipts r, users u, orders o, outlets t, campuses k, packages p, categories c, addresses a, cities b, states n
+                                WHERE d.receipt_id = r.id AND r.user_id = u.id AND r.order_id = o.id AND o.outlet_id = t.id AND t.campus_id = k.id AND o.package_id = p.id AND p.category_id = c.id AND r.address_id = a.id AND a.city_id = b.id AND a.state_id = n.id AND o.status = 'completed'
+                                ORDER BY d.id";
+
+                                // To run SQL query in database
+                                $result = mysqli_query($mysql, $query);
+
+                                // Check whether or not the table has existing data
+                                if (mysqli_num_rows($result) > 0) {
+
+                                    // Output data of each row
+                                    while ($row = mysqli_fetch_assoc($result)) {
+
+                                        $deliveryId = $row["id"];
+                                        $clientName = $row["name"];
+                                        $outletName = $row["outlet_name"] . ", " . $row["campus_name"];
+                                        $categoryName = $row["category_name"];
+                                        $quantity = $row["quantity"];
+                                        $deliveryLocation = $row["unit_no"] . ", " . $row["street_name"] . ", " . $row["residential_area"] . ", " . $row["postal_code"] . ", " . $row["city_name"] . ", " . $row["state_name"];
+                                        $orderStatus = $row["order_status"];
+                                        $commissionFee = $row["commission_fee"];
+
+                                ?>
+
+                                        <tbody>
+                                            <tr>
+                                                <td><?php echo $deliveryId; ?></td>
+                                                <td><?php echo $clientName; ?></td>
+                                                <td><?php echo $outletName; ?></td>
+                                                <td><?php echo $categoryName; ?></td>
+                                                <td><?php echo $quantity; ?></td>
+                                                <td><?php echo $deliveryLocation; ?></td>
+                                                <td><?php echo ucfirst($orderStatus); ?></td>
+                                                <td><?php echo $commissionFee; ?></td>
+                                            </tr>
+                                        </tbody>
+
+                                <?php
+                                    }
+                                } else {
+                                    echo "0 results";
+                                }
+                                ?>
+
+                            </table>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="panel-heading">
+                        <h3 class="panel-title">List of Complaints</h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped">
+
+                                <thead>
+                                    <tr>
+                                        <th>Complaint ID</th>
+                                        <th>Delivery ID</th>
+                                        <th>Description</th>
+                                        <th>Status</th>
+                                        <th>Date Received</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -190,10 +268,7 @@
                                 mysqli_select_db($mysql, "onprint") or die(mysqli_error($mysql));
 
                                 // 3. Write SQL statement that selects the record from table named "receipts"
-                                $query = "SELECT r.id, u.name, t.name AS outlet_name, k.name as campus_name, c.name AS category_name, o.quantity, r.status, o.total_price, a.unit_no, a.street_name, a.residential_area, a.postal_code, b.name AS city_name, n.name AS state_name, o.id AS order_id, o.status AS order_status
-                                FROM receipts r, users u, orders o, outlets t, campuses k, packages p, categories c, addresses a, cities b, states n
-                                WHERE r.user_id = u.id AND r.order_id = o.id AND o.outlet_id = t.id AND t.campus_id = k.id AND o.package_id = p.id AND p.category_id = c.id AND r.address_id = a.id AND a.city_id = b.id AND a.state_id = n.id AND o.status = 'completed'
-                                ORDER BY r.id";
+                                $query = "SELECT * FROM complaints ORDER BY id";
 
                                 // To run SQL query in database
                                 $result = mysqli_query($mysql, $query);
@@ -204,27 +279,22 @@
                                     // Output data of each row
                                     while ($row = mysqli_fetch_assoc($result)) {
 
-                                        $receiptId = $row["id"];
-                                        $clientName = $row["name"];
-                                        $outletName = $row["outlet_name"] . ", " . $row["campus_name"];
-                                        $categoryName = $row["category_name"];
-                                        $quantity = $row["quantity"];
-                                        $deliveryLocation = $row["unit_no"] . ", " . $row["street_name"] . ", " . $row["residential_area"] . ", " . $row["postal_code"] . ", " . $row["city_name"] . ", " . $row["state_name"];
-                                        $orderId = $row["order_id"];
-                                        $orderStatus = $row["order_status"];
+                                        $complaintId = $row["id"];
+                                        $deliveryId = $row["delivery_id"];
+                                        $description = $row["description"];
+                                        $status = $row["status"];
+                                        $date_received = $row["date_received"];
 
                                 ?>
 
                                         <tbody>
                                             <tr>
-                                                <td><?php echo $receiptId; ?></td>
-                                                <td><?php echo $clientName; ?></td>
-                                                <td><?php echo $outletName; ?></td>
-                                                <td><?php echo $categoryName; ?></td>
-                                                <td><?php echo $quantity; ?></td>
-                                                <td><?php echo $deliveryLocation; ?></td>
-                                                <td><?php echo ucfirst($orderStatus); ?></td>
-                                                <td><a href="delivery-note.php?id=<?php echo $orderId; ?>">Pick up</a></td>
+                                                <td><?php echo $complaintId; ?></td>
+                                                <td><?php echo $deliveryId; ?></td>
+                                                <td><?php echo $description; ?></td>
+                                                <td><?php echo $status; ?></td>
+                                                <td><?php echo $date_received; ?></td>
+                                                <td><a href="delivery-note.php?id=<?php echo $deliveryId; ?>">Pick up</a></td>
                                             </tr>
                                         </tbody>
 

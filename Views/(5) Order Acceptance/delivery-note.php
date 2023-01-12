@@ -174,9 +174,9 @@
                                 mysqli_select_db($mysql, "onprint") or die(mysqli_error($mysql));
 
                                 // 3. Write SQL statement that selects the record from table named "receipts"
-                                $query = "SELECT r.id, u.name, t.name AS outlet_name, c.name AS category_name, o.quantity, r.status, o.total_price, a.unit_no, a.street_name, a.residential_area, a.postal_code, b.name AS city_name, n.name AS state_name, o.status AS order_status
-                                FROM receipts r, users u, orders o, outlets t, packages p, categories c, addresses a, cities b, states n
-                                WHERE r.user_id = u.id AND r.order_id = o.id AND o.outlet_id = t.id AND o.package_id = p.id AND p.category_id = c.id AND r.address_id = a.id AND a.city_id = b.id AND a.state_id = n.id";
+                                $query = "SELECT r.id, u.name, t.name AS outlet_name, k.name as campus_name, c.name AS category_name, o.quantity, r.status, o.total_price, a.unit_no, a.street_name, a.residential_area, a.postal_code, b.name AS city_name, n.name AS state_name, o.status AS order_status
+                                FROM receipts r, users u, orders o, outlets t, campuses k, packages p, categories c, addresses a, cities b, states n
+                                WHERE r.user_id = u.id AND r.order_id = o.id AND o.outlet_id = t.id AND t.campus_id = k.id AND o.package_id = p.id AND p.category_id = c.id AND r.address_id = a.id AND a.city_id = b.id AND a.state_id = n.id AND o.status = 'prepared'";
 
                                 // To run SQL query in database
                                 $result = mysqli_query($mysql, $query);
@@ -189,7 +189,7 @@
 
                                         $receiptId = $row["id"];
                                         $clientName = $row["name"];
-                                        $outletName = $row["outlet_name"];
+                                        $outletName = $row["outlet_name"] . ", " . $row["campus_name"];
                                         $categoryName = $row["category_name"];
                                         $quantity = $row["quantity"];
                                         $paymentStatus = $row["status"];

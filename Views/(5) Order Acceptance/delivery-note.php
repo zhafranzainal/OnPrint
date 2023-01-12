@@ -20,6 +20,23 @@
 
 <body>
 
+    <?php
+
+    // 1. Connect to MySQL server
+    $mysql = mysqli_connect("localhost", "root", "") or die(mysqli_connect_error());
+
+    // 2. Select the database named "onprint"
+    mysqli_select_db($mysql, "onprint") or die(mysqli_error($mysql));
+
+    if (isset($_GET['id'])) {
+        $idURL = $_GET['id'];
+
+        // Write SQL statement that updates the record from table named "orders"
+        $query = "UPDATE orders SET status = 'picked up' WHERE id = $idURL";
+        $result = mysqli_query($mysql, $query) or die(mysqli_error($mysql));
+    }
+    ?>
+
     <div class="top-header bg-primary">
         <div class="container">
             <div class="row">
@@ -174,9 +191,10 @@
                                 mysqli_select_db($mysql, "onprint") or die(mysqli_error($mysql));
 
                                 // 3. Write SQL statement that selects the record from table named "receipts"
-                                $query = "SELECT r.id, u.name, t.name AS outlet_name, k.name as campus_name, c.name AS category_name, o.quantity, r.status, o.total_price, a.unit_no, a.street_name, a.residential_area, a.postal_code, b.name AS city_name, n.name AS state_name, o.status AS order_status
+                                $query = "SELECT r.id, u.name, t.name AS outlet_name, k.name as campus_name, c.name AS category_name, o.quantity, r.status, o.total_price, a.unit_no, a.street_name, a.residential_area, a.postal_code, b.name AS city_name, n.name AS state_name, o.id AS order_id, o.status AS order_status
                                 FROM receipts r, users u, orders o, outlets t, campuses k, packages p, categories c, addresses a, cities b, states n
-                                WHERE r.user_id = u.id AND r.order_id = o.id AND o.outlet_id = t.id AND t.campus_id = k.id AND o.package_id = p.id AND p.category_id = c.id AND r.address_id = a.id AND a.city_id = b.id AND a.state_id = n.id AND o.status = 'prepared'";
+                                WHERE r.user_id = u.id AND r.order_id = o.id AND o.outlet_id = t.id AND t.campus_id = k.id AND o.package_id = p.id AND p.category_id = c.id AND r.address_id = a.id AND a.city_id = b.id AND a.state_id = n.id AND o.status = 'prepared'
+                                ORDER BY r.id";
 
                                 // To run SQL query in database
                                 $result = mysqli_query($mysql, $query);
@@ -195,6 +213,7 @@
                                         $paymentStatus = $row["status"];
                                         $totalPayment = $row["total_price"];
                                         $deliveryLocation = $row["unit_no"] . ", " . $row["street_name"] . ", " . $row["residential_area"] . ", " . $row["postal_code"] . ", " . $row["city_name"] . ", " . $row["state_name"];
+                                        $orderId = $row["order_id"];
                                         $orderStatus = $row["order_status"];
 
                                 ?>
@@ -206,12 +225,12 @@
                                                 <td><?php echo $outletName; ?></td>
                                                 <td><?php echo $categoryName; ?></td>
                                                 <td><?php echo $quantity; ?></td>
-                                                <td><?php echo $paymentStatus; ?></td>
+                                                <td><?php echo ucfirst($paymentStatus); ?></td>
                                                 <td><?php echo $totalPayment; ?></td>
                                                 <td><?php echo $deliveryLocation; ?></td>
-                                                <td><?php echo $orderStatus; ?></td>
+                                                <td><?php echo ucfirst($orderStatus); ?></td>
 
-                                                <td><a href="">Pick up</a></td>
+                                                <td><a href="delivery-note.php?id=<?php echo $orderId; ?>">Pick up</a></td>
                                             </tr>
                                         </tbody>
 

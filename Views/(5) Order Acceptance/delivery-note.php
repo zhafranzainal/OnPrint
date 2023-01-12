@@ -29,6 +29,7 @@
     mysqli_select_db($mysql, "onprint") or die(mysqli_error($mysql));
 
     if (isset($_GET['id'])) {
+
         $idURL = $_GET['id'];
 
         // Write SQL statement that updates the record from table named "orders"

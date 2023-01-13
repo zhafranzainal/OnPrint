@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Delivery Record</title>
+    <title>Delivery Feedback</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -29,12 +29,39 @@
     mysqli_select_db($mysql, "onprint") or die(mysqli_error($mysql));
 
     if (isset($_GET['id'])) {
-
         $idURL = $_GET['id'];
+    }
 
-        // Write SQL statement that updates the record from table named "orders"
-        $query = "INSERT INTO feedbacks VALUES('', '$idURL', 'I will refund', NULL, NULL, NULL);";
-        $result = mysqli_query($mysql, $query) or die(mysqli_error($mysql));
+    $error = "";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        if (!empty($_POST['description'])) {
+
+            // 1. Connect to MySQL server
+            $mysql = mysqli_connect("localhost", "root", "") or die(mysqli_connect_error());
+
+            // 2. Select the database named "onprint"
+            mysqli_select_db($mysql, "onprint") or die(mysqli_error($mysql));
+
+            // 3. Write SQL statement that inserts the record into table named "users"
+            $description = $_POST['description'];
+            extract($_POST);
+            $query = "INSERT INTO feedbacks VALUES('', '$id', '$description', NULL, NULL, NULL);";
+
+            // To run SQL query in database
+            $result = mysqli_query($mysql, $query);
+
+            // Check whether the insert was successful or not
+            if ($result) {
+                echo "<script type='text/javascript'>
+                window.location='delivery-record.php'
+                </script>";
+            } else {
+                echo "Error: " . $query . "<br>" . mysqli_error($mysql);
+            }
+        } else
+            $error = "Please input your feedback description!";
     }
 
     ?>
@@ -168,6 +195,8 @@
 
                         <label>Description</label><br>
                         <input type="text" name="description" required="">
+
+                        <input type="hidden" name="id" value="<?php echo $idURL; ?>">
 
                         <br><br>
                         <input type="submit">

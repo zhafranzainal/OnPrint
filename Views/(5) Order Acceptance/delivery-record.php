@@ -250,9 +250,8 @@
                                 mysqli_select_db($mysql, "onprint") or die(mysqli_error($mysql));
 
                                 // 3. Write SQL statement that selects the record from table named "complaints"
-                                $query = "SELECT c.id, c.delivery_id, c.description AS complaint, f.description AS feedback, c.status, c.date_received
-                                FROM complaints c, feedbacks f
-                                WHERE c.id = f.complaint_id
+                                $query = "SELECT c.id, c.delivery_id, c.description AS complaint, f.id as feedback_id, f.description AS feedback, c.status, c.date_received
+                                FROM complaints c LEFT JOIN feedbacks f ON c.id = f.complaint_id
                                 ORDER BY c.id";
 
                                 // To run SQL query in database
@@ -267,6 +266,7 @@
                                         $complaintId = $row["id"];
                                         $deliveryId = $row["delivery_id"];
                                         $complaintDescription = $row["complaint"];
+                                        $feedbackId = $row["feedback_id"];
                                         $feedbackDescription = $row["feedback"];
                                         $status = $row["status"];
                                         $date_received = $row["date_received"];
@@ -284,7 +284,7 @@
                                                 <?php if ($status != 'closed' && $status != 'resolved') : ?>
                                                     <td><a href="delivery-feedback.php?id=<?php echo $complaintId; ?>">Give feedback</a></td>
                                                 <?php else : ?>
-                                                    <td>-</td>
+                                                    <td><a href="delete-feedback.php?complaintId=<?php echo $complaintId; ?>&feedbackId=<?php echo $feedbackId; ?>">Delete feedback</a></td>
                                                 <?php endif; ?>
                                             </tr>
                                         </tbody>

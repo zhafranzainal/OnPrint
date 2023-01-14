@@ -233,7 +233,8 @@
                                     <tr>
                                         <th>Complaint ID</th>
                                         <th>Delivery ID</th>
-                                        <th>Description</th>
+                                        <th>Complaint Description</th>
+                                        <th>Feedback Description</th>
                                         <th>Status</th>
                                         <th>Date Received</th>
                                         <th>Action</th>
@@ -249,7 +250,10 @@
                                 mysqli_select_db($mysql, "onprint") or die(mysqli_error($mysql));
 
                                 // 3. Write SQL statement that selects the record from table named "complaints"
-                                $query = "SELECT * FROM complaints ORDER BY id";
+                                $query = "SELECT c.id, c.delivery_id, c.description AS complaint, f.description AS feedback, c.status, c.date_received
+                                FROM complaints c, feedbacks f
+                                WHERE c.id = f.complaint_id
+                                ORDER BY c.id";
 
                                 // To run SQL query in database
                                 $result = mysqli_query($mysql, $query);
@@ -262,7 +266,8 @@
 
                                         $complaintId = $row["id"];
                                         $deliveryId = $row["delivery_id"];
-                                        $description = $row["description"];
+                                        $complaintDescription = $row["complaint"];
+                                        $feedbackDescription = $row["feedback"];
                                         $status = $row["status"];
                                         $date_received = $row["date_received"];
 
@@ -272,7 +277,8 @@
                                             <tr>
                                                 <td><?php echo $complaintId; ?></td>
                                                 <td><?php echo $deliveryId; ?></td>
-                                                <td><?php echo $description; ?></td>
+                                                <td><?php echo $complaintDescription; ?></td>
+                                                <td><?php echo $feedbackDescription; ?></td>
                                                 <td><?php echo ucfirst($status); ?></td>
                                                 <td><?php echo $date_received; ?></td>
                                                 <?php if ($status != 'closed' && $status != 'resolved') : ?>

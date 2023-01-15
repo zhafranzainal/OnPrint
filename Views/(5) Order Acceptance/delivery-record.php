@@ -171,7 +171,7 @@
                                 mysqli_select_db($mysql, "onprint") or die(mysqli_error($mysql));
 
                                 // 3. Write SQL statement that selects the record from table named "deliveries"
-                                $query = "SELECT d.id, u.name, t.name AS outlet_name, k.name as campus_name, c.name AS category_name, o.quantity, a.unit_no, a.street_name, a.residential_area, a.postal_code, b.name AS city_name, n.name AS state_name, o.status AS order_status, d.commission_fee
+                                $query = "SELECT d.id, u.name, t.name AS outlet_name, k.name AS campus_name, c.name AS category_name, o.quantity, a.unit_no, a.street_name, a.residential_area, a.postal_code, b.name AS city_name, n.name AS state_name, o.status AS order_status, d.commission_fee
                                 FROM deliveries d, receipts r, users u, orders o, outlets t, campuses k, packages p, categories c, addresses a, cities b, states n
                                 WHERE d.receipt_id = r.id AND r.user_id = u.id AND r.order_id = o.id AND o.outlet_id = t.id AND t.campus_id = k.id AND o.package_id = p.id AND p.category_id = c.id AND r.address_id = a.id AND a.city_id = b.id AND a.state_id = n.id AND o.status = 'completed'
                                 ORDER BY d.id";
@@ -250,7 +250,7 @@
                                 mysqli_select_db($mysql, "onprint") or die(mysqli_error($mysql));
 
                                 // 3. Write SQL statement that selects the record from table named "complaints"
-                                $query = "SELECT c.id, c.delivery_id, c.description AS complaint, f.id as feedback_id, f.description AS feedback, c.status, c.date_received
+                                $query = "SELECT c.id, c.delivery_id, c.description AS complaint, f.id AS feedback_id, f.description AS feedback, c.status, c.date_received
                                 FROM complaints c LEFT JOIN feedbacks f ON c.id = f.complaint_id
                                 ORDER BY c.id";
 

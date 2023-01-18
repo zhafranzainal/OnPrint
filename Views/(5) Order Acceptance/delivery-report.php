@@ -1,3 +1,25 @@
+<?php
+
+// 1. Connect to MySQL server
+$mysql = mysqli_connect("localhost", "root", "") or die(mysqli_connect_error());
+
+// 2. Select the database named "onprint"
+mysqli_select_db($mysql, "onprint") or die(mysqli_error($mysql));
+
+// $riderId = $_SESSION['SESS_ID'];
+
+$query = "SELECT * FROM riders WHERE id = '1'";
+$result = mysqli_query($mysql, $query) or die(mysqli_error($mysql));
+$row = mysqli_fetch_assoc($result);
+
+$totalCommission = $row['total_commission'];
+$commissionMonthly = $totalCommission / 12;
+$commissionWeekly = $commissionMonthly / 4;
+
+//@mysql_free_result($result);
+
+?>
+
 <html>
 
 <head>
@@ -5,71 +27,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Delivery Feedback</title>
+
+    <title>Delivery Report</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../../Styles (css)/style.css">
-    <link rel="stylesheet" href="../../Styles (css)/table.css">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-
-    <link href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
 </head>
 
 <body>
-
-    <?php
-
-    // 1. Connect to MySQL server
-    $mysql = mysqli_connect("localhost", "root", "") or die(mysqli_connect_error());
-
-    // 2. Select the database named "onprint"
-    mysqli_select_db($mysql, "onprint") or die(mysqli_error($mysql));
-
-    if (isset($_GET['id'])) {
-
-        $idURL = $_GET['id'];
-
-        // Write SQL statement that updates the record from table named "complaints"
-        $query = "UPDATE complaints SET status = 'resolved' WHERE id = $idURL;";
-        $result = mysqli_query($mysql, $query) or die(mysqli_error($mysql));
-    }
-
-    $error = "";
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-        if (!empty($_POST['description'])) {
-
-            // 1. Connect to MySQL server
-            $mysql = mysqli_connect("localhost", "root", "") or die(mysqli_connect_error());
-
-            // 2. Select the database named "onprint"
-            mysqli_select_db($mysql, "onprint") or die(mysqli_error($mysql));
-
-            // 3. Write SQL statement that inserts the record into table named "users"
-            $description = $_POST['description'];
-            extract($_POST);
-            $query = "INSERT INTO feedbacks VALUES('', '$id', '$description', NULL, NULL, NULL);";
-
-            // To run SQL query in database
-            $result = mysqli_query($mysql, $query);
-
-            // Check whether the insert was successful or not
-            if ($result) {
-                echo "<script type='text/javascript'>
-                window.location='delivery-record.php'
-                </script>";
-            } else {
-                echo "Error: " . $query . "<br>" . mysqli_error($mysql);
-            }
-        } else
-            $error = "Please input your feedback description!";
-    }
-
-    ?>
 
     <div class="top-header bg-primary">
         <div class="container">
@@ -170,8 +139,8 @@
 
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="delivery-note.php">Notes</a>
-                            <a class="dropdown-item" href="#">Record</a>
-                            <a class="dropdown-item" href="delivery-report.php">Report</a>
+                            <a class="dropdown-item" href="delivery-record.php">Record</a>
+                            <a class="dropdown-item" href="#">Report</a>
                         </div>
 
                     </li>
@@ -193,20 +162,72 @@
                 <div class="panel panel-default claim-panel-table">
 
                     <div class="panel-heading">
-                        <h3 class="panel-title">Delivery Feedback</h3>
+                        <h3 class="panel-title">Delivery Report</h3>
                     </div>
 
-                    <form method="post" action="delivery-feedback.php">
+                    <div class="main-overview">
 
-                        <label>Description</label><br>
-                        <input type="text" name="description" required="">
+                        <div class="overviewCard">
 
-                        <input type="hidden" name="id" value="<?php echo $idURL; ?>">
+                            <div class="overviewCard-icon overviewCard-icon--document">
+                                <i class="far fa-money-bill-alt"></i>
+                            </div>
 
-                        <br><br>
-                        <input type="submit">
+                            <div class="overviewCard-description">
+                                <div class="quickview__item">
 
-                    </form>
+                                    <div class="quickview__item-total">RM<?php echo round($totalCommission, 2); ?></div>
+
+                                    <div class="quickview__item-description">
+                                        <i class="far fa-calendar-alt"> Total commission</i>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="overviewCard">
+
+                            <div class="overviewCard-icon overviewCard-icon--calendar">
+                                <i class="far fa-money-bill-alt"></i>
+                            </div>
+
+                            <div class="overviewCard-description">
+                                <div class="quickview__item">
+
+                                    <div class="quickview__item-total">RM<?php echo round($commissionMonthly, 2); ?></div>
+
+                                    <div class="quickview__item-description">
+                                        <i class="far fa-calendar-alt"> Monthly commission</i>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="overviewCard">
+
+                            <div class="overviewCard-icon overviewCard-icon--mail">
+                                <i class="far fa-money-bill-alt"></i>
+                            </div>
+
+                            <div class="overviewCard-description">
+                                <div class="quickview__item">
+
+                                    <div class="quickview__item-total">RM<?php echo round($commissionWeekly, 2); ?></div>
+
+                                    <div class="quickview__item-description">
+                                        <i class="far fa-calendar-alt"> Weekly commission</i>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </div>
             </div>

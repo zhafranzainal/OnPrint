@@ -4,6 +4,96 @@
 
 }
 
+.main-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  grid-auto-rows: 94px;
+  grid-gap: 30px;
+  margin: 20px;
+}
+
+.overviewCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background-color: #fff;
+  transform: translateY(0);
+  transition: all 0.3s;
+}
+
+.overviewCard-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  font-size: 21px;
+  color: #fff;
+}
+
+.overviewCard-icon--document {
+  background-color: #e67e22;
+}
+
+.overviewCard-icon--calendar {
+  background-color: #27ae60;
+}
+
+.overviewCard-icon--mail {
+  background-color: #e74c3c;
+}
+
+.overviewCard-icon--photo {
+  background-color: #af64cc;
+}
+
+.overviewCard-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overviewCard-title {
+  font-size: 18px;
+  color: #1bbae1;
+  margin: 0;
+}
+
+.overviewCard-subtitle {
+  margin: 2px;
+  color: #777;
+}
+
+.overviewCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, .1);
+  cursor: pointer;
+}
+
+.quickview {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 60px;
+}
+
+.quickview__item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.quickview__item-total {
+  margin-bottom: 2px;
+  font-size: 32px;
+}
+
+.quickview__item-description {
+  font-size: 16px;
+  text-align: center;
+}
+
 #navbarNav {
   z-index: 200;
   background-color: white;
@@ -182,8 +272,6 @@ footer .col-md-3 h5 {
   border: none !important;
 }
 
-
-
 #productpage .input-group span {
 
   cursor: pointer;
@@ -206,8 +294,6 @@ footer .col-md-3 h5 {
   font-weight: 500;
   font-size: 18px;
 }
-
-
 
 .card .card-body .card-cost {
   font-size: 20px;
@@ -318,8 +404,6 @@ a:hover {
 
 }
 
-
-
 #card .card {
   box-shadow: 3px 4px 12px 2px rgb(236, 236, 236);
 
@@ -362,28 +446,6 @@ a:hover {
   box-shadow: 3px 4px 12px 2px rgb(236, 236, 236);
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Responsive Website */
 
@@ -572,8 +634,6 @@ a:hover {
   #relatedProducts .col-md-3 {
     margin-bottom: 30%;
   }
-
-
 
 }
 

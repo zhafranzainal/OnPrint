@@ -139,7 +139,7 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Notes</a>
                             <a class="dropdown-item" href="delivery-record.php">Record</a>
-                            <a class="dropdown-item" href="delivery-report.html">Report</a>
+                            <a class="dropdown-item" href="delivery-report.php">Report</a>
                         </div>
 
                     </li>

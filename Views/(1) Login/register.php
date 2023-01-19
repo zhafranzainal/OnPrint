@@ -34,7 +34,15 @@
                             $pass = $_POST['password'];
                             $mobileNo = $_POST['mobile_no'];
 
-                            $query = "INSERT INTO users VALUES(NULL, '1', '$name', '$email', NULL, '$username', '$pass', '$mobileNo', '1', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)";
+                            $unitNo = $_POST['unit_no'];
+                            $streetName = $_POST['street_name'];
+                            $residentialArea = $_POST['residential_area'];
+                            $postalCode = $_POST['postal_code'];
+
+                            $query = "INSERT INTO addresses VALUES('', '$unitNo', '$streetName', '$residentialArea', '$postalCode', '30', '1', NULL, NULL, NULL);";
+                            $result = mysqli_query($mysql, $query);
+
+                            $query = "INSERT INTO users VALUES('', '1', '$name', '$email', NULL, '$username', '$pass', '$mobileNo', '1', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)";
 
                             // To run SQL query in database
                             $result = mysqli_query($mysql, $query);
@@ -90,6 +98,26 @@
             <div class="user-box">
                 <input type="text" name="mobile_no" required="">
                 <label>Mobile No</label>
+            </div>
+
+            <div class="user-box">
+                <input type="text" name="unit_no" required="">
+                <label>Unit No</label>
+            </div>
+
+            <div class="user-box">
+                <input type="text" name="street_name" required="">
+                <label>Street Name</label>
+            </div>
+
+            <div class="user-box">
+                <input type="text" name="residential_area" o required="">
+                <label>Residential Area</label>
+            </div>
+
+            <div class="user-box">
+                <input type="text" name="postal_code" required="">
+                <label>Postal Code</label>
             </div>
 
             <a href="#">

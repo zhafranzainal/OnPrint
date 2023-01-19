@@ -62,7 +62,7 @@ session_start();
 
         </form>
 
-        <a href="register.html" class="float-right text-primary">Not a Member? Register</a>
+        <a href="register.php" class="float-right text-primary">Not a Member? Register</a>
 
     </div>
 

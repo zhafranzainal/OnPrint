@@ -48,7 +48,7 @@ $commissionWeekly = $commissionMonthly / 4;
                     <ul>
                         <li><a href="../index.html">Home</a></li>
                         <li><a href="../(3) Printing Order/order.html">Order</a></li>
-                        <li><a href="../(4) Payment/payment.html">Payment</a></li>
+                        <li><a href="../(4) Payment/payment.php">Payment</a></li>
                         <li><a href="#">Delivery</a></li>
                         <li><a href="../(6) Sales and Admin/admin.html">Sales and Admin</a></li>
                     </ul>

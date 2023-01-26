@@ -37,7 +37,7 @@ echo "<h3>Congratulations, " . $_SESSION['SESS_NAME'] . "! Login Successfully :)
     </p>
 
     <br>
-
+    
     <a href="logout.php">Logout Here</a>
 
 </body>

@@ -1,0 +1,743 @@
+* {
+    padding: 0;
+    margin: 0;
+  
+  }
+  
+  #navbarNav {
+    z-index: 200;
+    background-color: white;
+  }
+  
+  .top-header ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 16px;
+  }
+  
+  .top-header ul li a {
+    color: rgba(255, 255, 255, 0.863);
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .top-header ul {
+    padding-top: 4px;
+  }
+  
+  .top-header .col-md-5 {
+    text-align: right;
+    color: rgba(255, 255, 255, 0.863);
+    padding: 8px 0;
+    font-weight: lighter;
+  
+  }
+  
+  .navbar-nav li {
+    font-size: 120%;
+    font-weight: 500;
+    padding-right: 10px;
+  }
+  
+  a span {
+    color: black;
+    font-weight: 700;
+  }
+  
+  .dropdown-menu a {
+    font-size: 20px;
+  }
+  
+  .circle {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    text-align: center;
+    padding-top: 0.9rem;
+  
+  }
+  
+  sup {
+    position: absolute;
+    font-size: 19px;
+  }
+  
+  .carousel img {
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  #border-line {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 0 4px;
+  }
+  
+  #border-line .col-md-4 {
+    padding: 0 22px;
+  }
+  
+  .box h5 {
+    font-weight: bold;
+  }
+  
+  .box p {
+    color: #444;
+  }
+  
+  #heading {
+    display: flex;
+    position: relative;
+  }
+  
+  #brands .card-text {
+    font-size: 19px;
+    font-weight: 400;
+    text-align: center;
+    position: relative;
+    bottom: 99%;
+  }
+  
+  #brands .row {
+    display: flex;
+  }
+  
+  #brands .card {
+    width: 210px;
+    height: 150px;
+    border-radius: 10px;
+    margin-left: 1.4%;
+  }
+  
+  #brands img {
+    position: relative;
+    top: 10%;
+  }
+  
+  footer {
+    background-color: #f8f9fa;
+  
+  }
+  
+  footer ul li {
+    list-style: none;
+  }
+  
+  footer ul li a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  footer ul li a:hover {
+    text-decoration: none;
+  }
+  
+  #footer span {
+    font-size: 18px;
+  }
+  
+  .form-group .form-control {
+    border-radius: 0rem !important;
+  }
+  
+  .form-group .form-control ::placeholder {
+    color: #ccc;
+    font-size: 14px;
+  }
+  
+  #float {
+    position: absolute;
+    right: 0;
+  }
+  
+  #sale {
+    font-size: 18px;
+    position: absolute;
+    margin: 10px 0 0 10px;
+  
+  }
+  
+  .cost {
+    font-weight: 600;
+  }
+  
+  .cardItem h2 {
+    font-weight: 700;
+    text-decoration: none;
+  
+  }
+  
+  .cardItem h2:hover {
+    text-decoration: none;
+  }
+  
+  footer .col-md-3 h5 {
+    margin-bottom: 5%;
+  }
+  
+  #productpage .table td,
+  #productpage .table th {
+    border: none !important;
+  }
+  
+  
+  
+  #productpage .input-group span {
+  
+    cursor: pointer;
+  }
+  
+  .numberbox1 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 19px;
+  }
+  
+  .numberbox2 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  
+  .numberbox3 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  
+  
+  
+  .card .card-body .card-cost {
+    font-size: 20px;
+    font-weight: 600;
+  
+  }
+  
+  .text-white {
+    color: white;
+  }
+  
+  .text-black {
+    color: black;
+  }
+  
+  a:hover {
+    text-decoration: none !important;
+  }
+  
+  .nav-item .nav-link {
+    padding: 0.5rem 8rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 17px;
+  }
+  
+  .nav-tabs .nav-link:hover {
+    border: none;
+    color: black;
+    border-bottom: 2px solid black;
+  
+  }
+  
+  .nav-tabs .nav-link:focus {
+    border: none;
+    color: orange;
+    border-bottom: 2px solid orange;
+  
+  }
+  
+  .nav-tabs .nav-link.active {
+    color: #ff6600;
+    background-color: none;
+    border-color: none;
+    border: none;
+    border-bottom: 2px solid #ff6600;
+    color: #ff6600;
+  }
+  
+  #addreview .form-group input {
+    font-weight: lighter;
+  }
+  
+  #addreview .form-group textarea {
+    font-weight: lighter;
+  }
+  
+  #purchase-btn {
+    margin-top: 5%;
+  }
+  
+  .cart {
+    background-color: #f5f5f5;
+    padding: 2rem 0;
+  }
+  
+  
+  #card .card {
+    border: none !important;
+  }
+  
+  #card .col-md-7 p {
+    font-size: 13px;
+  }
+  
+  #card .col-md-7 button {
+    background: none !important;
+  }
+  
+  .linespace {
+    line-height: 10px;
+  }
+  
+  #relatedProducts .col-md-3 .zoom-in:hover {
+    cursor: pointer;
+  
+  }
+  
+  #navbarNav .dropdown-menu .dropdown-item {
+    font-size: 17px;
+  
+  }
+  
+  .overlay {
+    overflow: hidden;
+    border-radius: 3%;
+  
+  }
+  
+  .zoom-in {
+    transition: 0.3s ease-in;
+    margin: 0;
+  }
+  
+  .zoom-in:hover {
+    cursor: pointer;
+    transform: scale(2);
+  
+  }
+  
+  
+  
+  #card .card {
+    box-shadow: 3px 4px 12px 2px rgb(236, 236, 236);
+  
+  }
+  
+  #card-cost h6 span {
+    margin-right: 50px;
+  }
+  
+  #join {
+    box-shadow: 3px 4px 12px 2px rgb(236, 236, 236);
+    padding: 20px;
+    border-top: 5px solid rgb(0, 110, 255);
+  }
+  
+  
+  #cards hr {
+    background-color: #c4c2c2;
+  }
+  
+  #profilePic {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    border: 2px solid #555555;
+  }
+  
+  .editPicture {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #555555;
+  }
+  
+  .h-fit-content {
+    height: fit-content;
+  }
+  
+  #v-pills-tabContent {
+    border-radius: 5px;
+    box-shadow: 3px 4px 12px 2px rgb(236, 236, 236);
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* Responsive Website */
+  
+  @media only screen and (min-width:320px) and (max-width:480px) {
+  
+    #navbarNav .nav-item .nav-link {
+      padding: 0.4rem 0rem;
+    }
+  
+    #cards .col-md-7 h5 {
+      margin-top: 10%;
+    }
+  
+    #card .col-md-7 button {
+      margin-left: -3%;
+      font-size: .833rem;
+      margin-bottom: 7%;
+    }
+  
+    #card .col-md-2 {
+      width: 45%;
+    }
+  
+    #cards {
+      margin-bottom: 20%;
+    }
+  
+    #cards hr {
+      margin: 15% 0;
+    }
+  
+    .nav {
+      display: block;
+    }
+  
+    html,
+    body {
+      width: fit-content;
+    }
+  
+    #productpage .row .col-md-5 {
+      padding-top: 7%;
+    }
+  
+    #purchase-btn {
+      margin-top: -5%;
+    }
+  
+    .top-header {
+      height: 8%;
+  
+    }
+  
+    #navbarNav {
+      border: 1px solid rgb(255, 196, 0);
+      padding: 0rem !important;
+  
+    }
+  
+    .top-header .col-md-5 h6 {
+      font-size: 15px;
+      font-weight: 400;
+      padding: 0rem 15px;
+      float: right;
+      margin-top: -2.2rem;
+    }
+  
+    .top-header .col-md-7 ul {
+      margin-bottom: 0rem !important;
+    }
+  
+    .top-header .col-md-7 ul li a {
+      font-size: 15px !important;
+      font-weight: 300;
+  
+    }
+  
+    .top-header .col-md-7 ul li {
+      padding: 0 6px;
+    }
+  
+    #top-logo .col-md-2 nav {
+      padding: 0.4rem !important;
+  
+    }
+  
+    #top-logo .col-md-2 nav a img {
+      height: 35px;
+    }
+  
+    #top-logo {
+      margin-top: 0.5rem !important;
+    }
+  
+    .circle {
+      margin: 0.3rem;
+  
+    }
+  
+    sup {
+      right: 77px !important;
+      margin-top: 4px !important;
+    }
+  
+    #icons {
+      right: 7rem !important;
+    }
+  
+    #searchbar .input-group {
+      width: 60%;
+      position: absolute;
+      margin-top: -3rem !important;
+      right: 0.2rem !important;
+    }
+  
+    .navbar-toggler {
+      margin-top: -5%;
+      width: 100%;
+    }
+  
+    #float {
+      right: 1rem;
+    }
+  
+    .cardItem h2 {
+      font-size: 1.65rem !important;
+    }
+  
+    .cardItem .card {
+      margin-bottom: 5%;
+    }
+  
+    footer .col-md-3 {
+      margin-bottom: 10%;
+    }
+  
+    #footerInfo {
+      padding-top: 5px;
+      font-size: 65.5%;
+      font-weight: 600;
+      margin: 0;
+      margin-right: 15px;
+  
+    }
+  
+    #copyright {
+      font-size: 85%;
+      font-weight: 500;
+    }
+  
+    #footer .container {
+      display: inline;
+    }
+  
+    #brands {
+      margin-left: 2%;
+    }
+  
+    #appStore {
+      margin-left: 3%;
+  
+    }
+  
+    /* InnerPage starts */
+  
+    #productpage .row .col-md-5 {
+      margin-bottom: 3rem;
+    }
+  
+    #productpage .row .col-md-7 .input-group {
+      width: 40%;
+    }
+  
+    #contact .row .col-md-10 {
+      position: absolute;
+      left: 22%;
+      top: -18%;
+    }
+  
+    #contact .review-rating {
+      position: absolute;
+      padding-top: 19%;
+      left: 29%;
+    }
+  
+    #relatedProducts .col-md-3 {
+      margin-bottom: 30%;
+    }
+  
+  
+  
+  }
+  
+  /* Code to remove arrows in input Type = Number */
+  
+  /* For Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* For Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+  
+  /* PAYMENT M3*/
+  
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  
+  body{
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .wrapper {
+    background-color: rgb(191, 191, 191);
+    width: 700px;
+    padding: 30px;
+    margin: 25px auto 0;
+    
+  
+  }
+  
+  .wrapper h2{
+    background-color: #fcfcfc;
+    color: black;
+    font-size: 24px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+   
+  }
+  
+  h4 {
+    padding-bottom: 5px;
+    color: black;
+  }
+  
+  .input-group {
+    margin-bottom: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: row; 
+    position: relative;
+    padding: 5px 0;
+  }
+  
+  .input-box{
+  width: 100%;
+  position: relative;
+  margin-right: 15px;
+  }
+  
+  input.name{
+  padding: 12px 10px 12px 40px;
+  width: 100%;
+  background-color: #fcfcfc;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid grey;
+  }
+  
+  input.dob {
+  padding: 12px;
+  width: 30%;
+  background-color: #fcfcfc;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid grey;
+  text-align: center;
+  }
+  
+  .input-box .icon{
+  color: #222;
+  position: absolute;
+  font-size: 20px;
+  top: 10px;
+  left: 5px;
+  bottom: 0;
+  }
+  
+  .fa-envelope {
+  color: #222;
+  position: absolute;
+  font-size: 20px;
+  top: 10px;
+  left: 5px;
+  bottom: 0;
+  }
+  
+  .input-box [type=tel] {
+  padding: 12px 10px 12px 40px;
+  width: 100%;
+  background-color: #fcfcfc;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid grey;
+  }
+  
+  .input-box button {
+  background-color: #7ed320;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  }
+  
+  .input-box select {
+  padding: 12px;
+  width: 50%;
+  background-color: #fcfcfc;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid grey;
+  text-align: center;
+  float: left;
+  }
+  
+  .radio {
+  display: none;
+  }
+  
+  .input-box label{
+  padding: 12px;
+  width: 50%;
+  background-color: #fcfcfc;
+  border: 1px solid grey;
+  text-align: center;
+  float: left;
+  }
+  
+  .input-box label:first-of-type {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-right: none;
+  }
+  
+  .input-box label:last-of-type {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  }
+  
+  .radio:checked + label {
+  background-color: #7ed320;
+  color: #fff;
+  }
+  
+  
+  

@@ -69,7 +69,7 @@
                     data-toggle="tooltip" data-placement="top" title="LOGIN & SIGNUP"><i
                         class="fas fa-user text-primary"></i></div>
 
-                <a href="cart.html">
+                <a href="../(3) Printing Order/cart.php">
                     <div class="circle float-right mr-2"><i class="fas fa-shopping-cart text-primary"></i><sup><span
                                 class="badge badge-danger" style="width: 23px;">0</span></sup></div>
                 </a>

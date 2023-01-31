@@ -7,16 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cart</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../../Styles (css)/style.css">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
-        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 
-    <link href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/favicon.ico" rel="shortcut icon"
-        type="image/x-icon">
+    <link href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
 </head>
 
@@ -55,11 +52,9 @@
             </div>
             <div class="col-md-7" id="searchbar">
                 <div class="input-group mt-3">
-                    <input type="text" class="form-control" placeholder="Search" aria-label="Search"
-                        aria-describedby="button-addon2">
+                    <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
                     <div class="input-group-append">
-                        <button class="btn btn-primary" type="button" id="button-addon2"><i
-                                class="fas fa-search"></i></button>
+                        <button class="btn btn-primary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
             </div>
@@ -87,8 +82,7 @@
     <div class="container" style="height: 30px;">
         <nav class="navbar navbar-expand-lg navbar-light" style="height: 30px;">
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -97,8 +91,7 @@
 
                     <li class="nav-item dropdown">
 
-                        <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                            aria-expanded="false"> <span> ≡ All Category</span></a>
+                        <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> <span> ≡ All Category</span></a>
 
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Comb Bind Notebook</a>
@@ -112,8 +105,7 @@
 
                     <li class="nav-item dropdown">
 
-                        <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                            aria-expanded="false">
+                        <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                             Campus
                         </a>
 
@@ -150,7 +142,7 @@
                     <div class="row mt-4">
                         <div class="col-md-3">
                             <div class="overlay">
-                                <img src="certificate.jpg" class="zoom-in figure-img img-fluid">
+                                <img src="../../Assets (images)/certificate.jpg" class="zoom-in figure-img img-fluid">
                             </div>
 
                         </div>
@@ -180,11 +172,11 @@
                                 while ($row = mysqli_fetch_assoc($result)) {
 
 
-                                        $categoryName = $row["name"];
+                                    $categoryName = $row["name"];
 
 
 
-                                    ?>
+                            ?>
 
                                     <h5 class="text-muted pt-2"><?php echo $categoryName; ?></h5>
                                     <p class="text-uppercase font-weight-light">WITH TAPE</p>
@@ -192,13 +184,12 @@
                                         <p class="text-muted mt-4">Laminate : Yes </p>
                                         <p class="text-muted">Size : A4</p>
                                     </div>
-                                    <button class="btn btn-sm text-muted text-uppercase"><i
-                                            class="fas fa-trash-alt pr-2"></i>REMOVE ITEM</button>
+                                    <button class="btn btn-sm text-muted text-uppercase"><i class="fas fa-trash-alt pr-2"></i>REMOVE ITEM</button>
                                     &nbsp;
                                     <button class="btn btn-sm text-muted text-uppercase"><i class="fas fa-heart pr-2"></i>ADD TO
                                         WISHLIST</button>
 
-                                    <?php
+                            <?php
                                 }
                             } else {
                                 echo "0 results";
@@ -210,7 +201,7 @@
                         </div>
 
 
-                        <div class="col-md-2"> 
+                        <div class="col-md-2">
                             <!-- //counter button -->
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend" onclick="add2()">
@@ -228,7 +219,7 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="overlay">
-                                <img src="Poster.jpg" class="zoom-in figure-img img-fluid">
+                                <img src="../../Assets (images)/poster.jpg" class="zoom-in figure-img img-fluid">
                             </div>
 
                         </div>
@@ -240,8 +231,7 @@
                                 <p class="text-muted mt-4">Laminate : no</p>
                                 <p class="text-muted">Size : A3</p>
                             </div>
-                            <button class="btn btn-sm text-muted text-uppercase"><i
-                                    class="fas fa-trash-alt pr-2"></i>REMOVE ITEM</button>
+                            <button class="btn btn-sm text-muted text-uppercase"><i class="fas fa-trash-alt pr-2"></i>REMOVE ITEM</button>
                             &nbsp;
                             <button class="btn btn-sm text-muted text-uppercase"><i class="fas fa-heart pr-2"></i>ADD TO
                                 WISHLIST</button>
@@ -283,8 +273,7 @@
                     <hr>
                     <h6 class="pl-2 pt-1">Total Price <span class="float-right">RM19.00</span></h6>
                     <hr>
-                    <button class="btn btn-primary mt-2"><a href="checkout.php" class="text-white"><i
-                                class="fas fa-shopping-bag pr-2"></i>Proceed to Checkout</a></button>
+                    <button class="btn btn-primary mt-2"><a href="checkout.php" class="text-white"><i class="fas fa-shopping-bag pr-2"></i>Proceed to Checkout</a></button>
                 </div>
             </div>
 
@@ -335,15 +324,9 @@
 
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="js/script.js"></script>
 
 </html>

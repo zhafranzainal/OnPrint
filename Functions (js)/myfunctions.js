@@ -1,9 +1,3 @@
-// BCS2243 WEB ENGINEERING [HOT]
-// Student ID: CB20033
-// Student Name: AHMAD ZHAFRAN FARUQI BIN ZAINAL ABIDIN
-// Section: 02B
-// Lecturer name: DR. NOORLIN MOHD ALI
-
 function checkBalance() {
 
     var land = document.getElementById("textbox2").value;

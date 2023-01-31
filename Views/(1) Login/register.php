@@ -69,7 +69,7 @@
 
     ?>
 
-    <div class="login-box">
+    <div class="register-box">
 
         <h2>Register</h2>
 

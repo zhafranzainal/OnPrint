@@ -29,7 +29,7 @@
 
                 <div class="col-md-7 mt-2">
                     <ul>
-                        <li><a href="../index1.html">Home</a></li>
+                        <li><a href="../index.html">Home</a></li>
                         <li><a href="../(3) Printing Order/order.php">Order</a></li>
                         <li><a href="../(4) Payment/payment.php">Payment</a></li>
                         <li><a href="../(5) Order Acceptance/delivery-note.php">Delivery</a></li>
@@ -112,8 +112,8 @@
                         </a>
 
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="campus-pekan.html">UMP Pekan</a>
-                            <a class="dropdown-item" href="campus-gambang.html">UMP Gambang</a>
+                            <a class="dropdown-item" href="../(3) Printing Order/campus-pekan.php">UMP Pekan</a>
+                            <a class="dropdown-item" href="../(3) Printing Order/campus-gambang.php">UMP Gambang</a>
                         </div>
 
                     </li>

@@ -156,8 +156,8 @@
                         </a>
 
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">UMP Pekan</a>
-                            <a class="dropdown-item" href="#">UMP Gambang</a>
+                            <a class="dropdown-item" href="../(3) Printing Order/campus-pekan.php">UMP Pekan</a>
+                            <a class="dropdown-item" href="../(3) Printing Order/campus-gambang.php">UMP Gambang</a>
                         </div>
 
                     </li>

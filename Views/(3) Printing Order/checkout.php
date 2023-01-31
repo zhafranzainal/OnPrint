@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Order</title>
+    <title>Checkout Menu</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -28,9 +28,9 @@
 
                 <div class="col-md-7 mt-2">
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="#">Order</a></li>
-                        <li><a href="../(4) Payment/payment.html">Payment</a></li>
+                        <li><a href="../index1.html">Home</a></li>
+                        <li><a href="../(3) Printing Order/order.php">Order</a></li>
+                        <li><a href="../(4) Payment/payment.php">Payment</a></li>
                         <li><a href="../(5) Order Acceptance/delivery-note.php">Delivery</a></li>
                         <li><a href="../(6) Sales and Admin/admin.html">Sales and Admin</a></li>
                     </ul>
@@ -64,13 +64,11 @@
                 </div>
             </div>
             <div class="col-md-3 mt-2" id="icons">
-                <a href="../(2) User/profile.html">
-                    <div class="circle float-right" title="Manage Profile">
-                        <i class="fas fa-user text-primary"></i>
-                    </div>
-                </a>
+                <div style="cursor: pointer;" class="circle float-right" data-toggle="modal" data-target="#loginModal"
+                    data-toggle="tooltip" data-placement="top" title="LOGIN & SIGNUP"><i
+                        class="fas fa-user text-primary"></i></div>
 
-                <a href="cart.html">
+                <a href="cart.php">
                     <div class="circle float-right mr-2"><i class="fas fa-shopping-cart text-primary"></i><sup><span
                                 class="badge badge-danger" style="width: 23px;">0</span></sup></div>
                 </a>
@@ -86,6 +84,7 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse pl-4" id="navbarNav">
                 <ul class="navbar-nav">
 
@@ -112,58 +111,132 @@
                         </a>
 
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="campus-pekan.html">UMP Pekan</a>
-                            <a class="dropdown-item" href="campus-gambang.html">UMP Gambang</a>
+                            <a class="dropdown-item" href="campus-pekan.php">UMP Pekan</a>
+                            <a class="dropdown-item" href="campus-gambang.php">UMP Gambang</a>
                         </div>
 
                     </li>
 
                 </ul>
             </div>
-        </nav>
 
+        </nav>
     </div>
     <hr>
+    <br>
 
-    <div class="container">
-        <div class="row mt-4" id="border-line">
-            <div class="col-md-4">
-                <div class="box">
-                    <i class="fas fa-truck fa-2x mb-3 mt-4 text-primary"></i>
-                    <h5>Fast delivery</h5>
-                    <p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
+    <h3 class="text-center">Checkout</h3>
+    <br>
+    <br><br>
+
+
+    <div class="container" id="card">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card p-4" id="cards">
+                    <h5 class="text-dark pl-4">Billing Details</h5>
+
+                    <form class="mt-4">
+                        <div class="row mx-1">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Full Name">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Student ID">
+
+                            </div>
+                        </div>
+                        <br>
+                        <div class="col ml-1">
+                            <input type="text" class="form-control" placeholder="Outlet">
+
+                        </div>
+                        <br>
+                        <div class="col ml-1">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                placeholder="Address"></textarea>
+
+                        </div>
+                        <br>
+
+                        <div class="col ml-1">
+                            <input type="number" class="form-control" placeholder="Postcode">
+
+
+                        </div>
+                        <br>
+                        <div class="col ml-1">
+                            <input type="text" class="form-control" placeholder="Town / City">
+
+                        </div>
+                        <br>
+
+                        <div class="col ml-1">
+                            <input type="email" class="form-control" placeholder="Email Address">
+                        </div>
+                        <br>
+                        <div class="col ml-1">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-light">+60</span>
+                                </div>
+                                <input type="number" class="form-control" placeholder="Phone Number">
+
+                            </div>
+
+                        </div>
+                        <div class="col ml-1">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                placeholder="Additional Information"></textarea>
+
+                        </div>
+                        <br>
+                        <br>
+                        <div class="form-check form-check-inline ml-4">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">&nbsp;
+                            <label class="form-check-label text-uppercase" for="inlineCheckbox1">Create an
+                                account?</label>
+                        </div>
+                    </form>
                 </div>
-
             </div>
 
             <div class="col-md-4">
-                <div class="box">
-                    <i class="fas fa-truck fa-2x mb-3 mt-4 text-primary"></i>
-                    <h5>Fast delivery</h5>
-                    <p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
+                <div class="card p-3" id="card-cost">
+                    <h5 class="text-primary pl-2">Total Amount</h5>
+                    <table class="table table-borderless pt-2">
+
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="font-weight-light">Product Amount</th>
+                                <td>RM15.00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="font-weight-light">Shipping</th>
+                                <td>RM4.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+                    <h6 class="pl-2 pt-1">Total Price <span class="float-right">RM19.00</span></h6>
+                    <hr>
+                    <form class="mt-4">
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <h6>Have a Coupon Code? Enter Below</h6>
+                                <input type="number" class="form-control border-0 pl-1" placeholder="x x x x x x">
+                                <hr class="mt-0">
+                            </div>
+                        </div>
+                    </form>
+                    <button class="btn btn-primary mt-2"><a href="checkout.php" class="text-white">Make
+                            Purchase</a></button>
                 </div>
             </div>
 
-            <div class="col-md-4">
-                <div class="box">
-                    <i class="fas fa-truck fa-2x mb-3 mt-4 text-primary"></i>
-                    <h5>Fast delivery</h5>
-                    <p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
-                </div>
-            </div>
         </div>
+
     </div>
-
-    <br> <br>
-
-    <footer>
-        <br><br>
-        <div class="container">
-            <div class="row">
-
-            </div>
-        </div>
-    </footer>
 
     <footer class="footer pt-5 pb-5" id="footer">
         <div class="container">
@@ -181,19 +254,15 @@
 
 </body>
 
-
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
     integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
-
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
-
 <script src="js/script.js"></script>
 
 </html>

@@ -28,7 +28,7 @@
 
                 <div class="col-md-7 mt-2">
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index1.html">Home</a></li>
                         <li><a href="../(3) Printing Order/order.php">Order</a></li>
                         <li><a href="../(4) Payment/payment.php">Payment</a></li>
                         <li><a href="../(5) Order Acceptance/delivery-note.php">Delivery</a></li>
@@ -125,7 +125,7 @@
     <hr>
     <br>
 
-    <h3 class="text-center">Checkout</h3>
+    <h3 class="text-center">Sales</h3>
     <br>
     <br><br>
 
@@ -134,110 +134,81 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="card p-4" id="cards">
-                    <h5 class="text-dark pl-4">Billing Details</h5>
-
-                    <form class="mt-4">
-                        <div class="row mx-1">
-                            <div class="col">
-                                <input type="text" class="form-control" placeholder="Display Name">
-                            </div>
-                            <div class="col">
-                                <input type="text" class="form-control" placeholder="Full Name">
-
-                            </div>
-                        </div>
-                        <br>
-                        <div class="col ml-1">
-                            <input type="text" class="form-control" placeholder="Company Name (optional)">
-
-                        </div>
-                        <br>
-                        <div class="col ml-1">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                placeholder="Address"></textarea>
-
-                        </div>
-                        <br>
-
-                        <div class="col ml-1">
-                            <input type="number" class="form-control" placeholder="Pincode">
+                    <h5 class="text-dark pl-4">Sales Table</h5>
 
 
-                        </div>
-                        <br>
-                        <div class="col ml-1">
-                            <input type="text" class="form-control" placeholder="Town / City">
+                    <?php
+                    $mysql = mysqli_connect("localhost", "root") or die(mysqli_connect_error());
 
-                        </div>
-                        <br>
+                    // // to select the targeted database
+                    mysqli_select_db($mysql, "onprint") or die(mysqli_connect_error());
 
-                        <div class="col ml-1">
-                            <input type="email" class="form-control" placeholder="Email Address">
-                        </div>
-                        <br>
-                        <div class="col ml-1">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text bg-light">+91</span>
-                                </div>
-                                <input type="number" class="form-control" placeholder="Phone Number">
+                    if (isset($_GET['id'])) {
+                        $id = $_GET['id'];
+                        $query = "DELETE FROM `receipt` WHERE id = '$id'";
+                        $run = mysqli_query($mysql, $query);
+                        if ($run) {
+                            header('location:salesreceipt.php');
+                        } else {
+                            echo "Error: " . mysqli_error(mysql);
+                        }
+                    }
+                    ?>
 
-                            </div>
+                    <?php
+                    $mysql = mysqli_connect("localhost", "root") or die(mysqli_connect_error());
 
-                        </div>
-                        <div class="col ml-1">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                placeholder="Additional Information"></textarea>
+                    // // to select the targeted database
+                    mysqli_select_db($mysql, "onprint") or die(mysqli_connect_error());
 
-                        </div>
-                        <br>
-                        <br>
-                        <div class="form-check form-check-inline ml-4">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">&nbsp;
-                            <label class="form-check-label text-uppercase" for="inlineCheckbox1">Create an
-                                account?</label>
-                        </div>
+                    $query = "SELECT * FROM receipts";
+                    $result = mysqli_query($mysql, $query);
+                    if (mysqli_num_rows($result) > 0) {
+
+                        // output data of each row
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $receiptId = $row["id"];
+
+
+                            $payment_method_id = $row["payment_method_id"];
+                            $order_id = $row["order_id"];
+
+
+                            ?>
+                            <table>
+                                <tr>
+                                    <th>Payment</th>
+                                    <th>Order</th>
+                                    <th>Delete</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <?php echo $payment_method_id; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $order_id; ?>
+                                    </td>
+
+
+                                    <td><a href="salesdelete.php?id=<?php echo $receiptId; ?>">DELETE</a></td>
+                                </tr>
+                            </table>
+                            <?php
+                        }
+                    } else {
+                        echo "0 results";
+
+                    }
+
+                    ?>
+
+
                     </form>
                 </div>
             </div>
-
-            <div class="col-md-4">
-                <div class="card p-3" id="card-cost">
-                    <h5 class="text-primary pl-2">Total Amount</h5>
-                    <table class="table table-borderless pt-2">
-
-                        <tbody>
-                            <tr>
-                                <th scope="row" class="font-weight-light">Product Amount</th>
-                                <td>RM179.00</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="font-weight-light">Shipping</th>
-                                <td>RM100.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <hr>
-                    <h6 class="pl-2 pt-1">Total Price <span class="float-right">RM279.00</span></h6>
-                    <hr>
-                    <form class="mt-4">
-                        <div class="form-group row">
-                            <div class="col-sm-12">
-                                <h6>Have a Coupon Code? Enter Below</h6>
-                                <input type="number" class="form-control border-0 pl-1" placeholder="x x x x x x">
-                                <hr class="mt-0">
-                            </div>
-                        </div>
-                    </form>
-                    <button class="btn btn-primary mt-2"><a href="checkout.html" class="text-white">Make
-                            Purchase</a></button>
-                </div>
-            </div>
-
         </div>
-
     </div>
-
+    </div>
     <footer class="footer pt-5 pb-5" id="footer">
         <div class="container">
 

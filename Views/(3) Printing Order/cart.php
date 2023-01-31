@@ -28,7 +28,7 @@
 
                 <div class="col-md-7 mt-2">
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index1.html">Home</a></li>
                         <li><a href="../(3) Printing Order/order.php">Order</a></li>
                         <li><a href="../(4) Payment/payment.php">Payment</a></li>
                         <li><a href="../(5) Order Acceptance/delivery-note.php">Delivery</a></li>
@@ -118,8 +118,8 @@
                         </a>
 
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="campus-pekan.html">UMP Pekan</a>
-                            <a class="dropdown-item" href="campus-gambang.html">UMP Gambang</a>
+                            <a class="dropdown-item" href="campus-pekan.php">UMP Pekan</a>
+                            <a class="dropdown-item" href="campus-gambang.php">UMP Gambang</a>
                         </div>
 
                     </li>
@@ -150,28 +150,68 @@
                     <div class="row mt-4">
                         <div class="col-md-3">
                             <div class="overlay">
-                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg"
-                                    class="zoom-in figure-img img-fluid">
+                                <img src="certificate.jpg" class="zoom-in figure-img img-fluid">
                             </div>
 
                         </div>
 
                         <div class="col-md-7">
-                            <h5 class="text-muted pt-2">Adidas Cool T-Shirt</h5>
-                            <p class="text-uppercase font-weight-light">SHIRT - BLUE</p>
-                            <div class="linespace mb-4">
-                                <p class="text-muted mt-4">Color : BLUE</p>
-                                <p class="text-muted">Size : M</p>
-                            </div>
-                            <button class="btn btn-sm text-muted text-uppercase"><i
-                                    class="fas fa-trash-alt pr-2"></i>REMOVE ITEM</button>
-                            &nbsp;
-                            <button class="btn btn-sm text-muted text-uppercase"><i class="fas fa-heart pr-2"></i>ADD TO
-                                WISHLIST</button>
+
+                            <?php
+
+                            // 1. Connect to MySQL server
+                            $mysql = mysqli_connect("localhost", "root", "") or die(mysqli_connect_error());
+
+                            // 2. Select the database named "onprint"
+                            mysqli_select_db($mysql, "onprint") or die(mysqli_error($mysql));
+
+                            // 3. Write SQL statement that selects the record from table named "receipts"
+                            $query = "SELECT p.name
+                            FROM receipts r, orders o, packages p
+                            WHERE r.order_id = o.id AND o.package_id = p.id";
+
+                            // To run SQL query in database
+                            $result = mysqli_query($mysql, $query);
+
+                            // Check whether or not the table has existing data
+                            if (mysqli_num_rows($result) > 0) {
+
+                                // Output data of each row
+                                while ($row = mysqli_fetch_assoc($result)) {
+
+
+                                        $categoryName = $row["name"];
+
+
+
+                                    ?>
+
+                                    <h5 class="text-muted pt-2"><?php echo $categoryName; ?></h5>
+                                    <p class="text-uppercase font-weight-light">WITH TAPE</p>
+                                    <div class="linespace mb-4">
+                                        <p class="text-muted mt-4">Laminate : Yes </p>
+                                        <p class="text-muted">Size : A4</p>
+                                    </div>
+                                    <button class="btn btn-sm text-muted text-uppercase"><i
+                                            class="fas fa-trash-alt pr-2"></i>REMOVE ITEM</button>
+                                    &nbsp;
+                                    <button class="btn btn-sm text-muted text-uppercase"><i class="fas fa-heart pr-2"></i>ADD TO
+                                        WISHLIST</button>
+
+                                    <?php
+                                }
+                            } else {
+                                echo "0 results";
+                            }
+                            ?>
+
+
 
                         </div>
 
-                        <div class="col-md-2">
+
+                        <div class="col-md-2"> 
+                            <!-- //counter button -->
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend" onclick="add2()">
                                     <span class="input-group-text"><i class="fas fa-plus"></i></span>
@@ -188,18 +228,17 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="overlay">
-                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13a.jpg"
-                                    class="zoom-in figure-img img-fluid">
+                                <img src="Poster.jpg" class="zoom-in figure-img img-fluid">
                             </div>
 
                         </div>
 
                         <div class="col-md-7">
-                            <h5 class="text-muted pt-2">Red Hoodie</h5>
-                            <p class="text-uppercase font-weight-light">SHIRT - RED</p>
+                            <h5 class="text-muted pt-2">Poster</h5>
+                            <p class="text-uppercase font-weight-light">COLOUR</p>
                             <div class="linespace mb-4">
-                                <p class="text-muted mt-4">Color : RED</p>
-                                <p class="text-muted">Size : M</p>
+                                <p class="text-muted mt-4">Laminate : no</p>
+                                <p class="text-muted">Size : A3</p>
                             </div>
                             <button class="btn btn-sm text-muted text-uppercase"><i
                                     class="fas fa-trash-alt pr-2"></i>REMOVE ITEM</button>
@@ -233,18 +272,18 @@
                         <tbody>
                             <tr>
                                 <th scope="row" class="font-weight-light">Product Amount</th>
-                                <td>$179.00</td>
+                                <td>RM15.00</td>
                             </tr>
                             <tr>
                                 <th scope="row" class="font-weight-light">Shipping</th>
-                                <td>$100.00</td>
+                                <td>RM4.00</td>
                             </tr>
                         </tbody>
                     </table>
                     <hr>
-                    <h6 class="pl-2 pt-1">Total Price <span class="float-right">$279.00</span></h6>
+                    <h6 class="pl-2 pt-1">Total Price <span class="float-right">RM19.00</span></h6>
                     <hr>
-                    <button class="btn btn-primary mt-2"><a href="checkout.html" class="text-white"><i
+                    <button class="btn btn-primary mt-2"><a href="checkout.php" class="text-white"><i
                                 class="fas fa-shopping-bag pr-2"></i>Proceed to Checkout</a></button>
                 </div>
             </div>
@@ -293,6 +332,7 @@
     </footer>
 
 </body>
+
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

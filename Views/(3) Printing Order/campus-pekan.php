@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Payment</title>
+    <title>UMP Pekan</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -28,9 +28,9 @@
 
                 <div class="col-md-7 mt-2">
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="../(3) Printing Order/order.html">Order</a></li>
-                        <li><a href="#">Payment</a></li>
+                        <li><a href="../index1.html">Home</a></li>
+                        <li><a href="order.php">Order</a></li>
+                        <li><a href="../(4) Payment/payment.php">Payment</a></li>
                         <li><a href="../(5) Order Acceptance/delivery-note.php">Delivery</a></li>
                         <li><a href="../(6) Sales and Admin/admin.html">Sales and Admin</a></li>
                     </ul>
@@ -70,7 +70,7 @@
                     </div>
                 </a>
 
-                <a href="cart.html">
+                <a href="cart.php">
                     <div class="circle float-right mr-2"><i class="fas fa-shopping-cart text-primary"></i><sup><span
                                 class="badge badge-danger" style="width: 23px;">0</span></sup></div>
                 </a>
@@ -112,7 +112,7 @@
 
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">UMP Pekan</a>
-                            <a class="dropdown-item" href="#">UMP Gambang</a>
+                            <a class="dropdown-item" href="campus-gambang.php">UMP Gambang</a>
                         </div>
 
                     </li>
@@ -129,17 +129,17 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img class="d-block w-100"
-                        src="https://images.ctfassets.net/1nw0m35kh5t7/6kI0OuYTrVywhKOyUd1kDi/ed6186f9da8feb4464ec6f9e238e6073/Types-of-e-commerce-16-9"
+                        src="umppekan1.jpg" style="width:100px;height:500px;"
                         alt="First slide" class="img-fluid">
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100"
-                        src="https://assets.entrepreneur.com/content/3x2/2000/20191127134656-e-commerce-3406613.jpeg?width=600&crop=16:9"
+                        src="umppekan.jpg" style="width:100px;height:500px;"
                         alt="Second slide" class="img-fluid">
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100"
-                        src="https://media.newyorker.com/photos/5b465113da42df0b560981d3/16:9/w_1280,c_limit/180723_r32444_rd.jpg"
+                        src="ump.jpg" style="width:100px;height:500px;"
                         alt="Third slide" class="img-fluid">
                 </div>
             </div>
@@ -159,26 +159,32 @@
         <div class="row mt-4" id="border-line">
             <div class="col-md-4">
                 <div class="box">
-                    <i class="fas fa-truck fa-2x mb-3 mt-4 text-primary"></i>
-                    <h5>Fast delivery</h5>
-                    <p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
+                    <img class="fas fa-truck fa-2x mb-3 mt-4 text-primary"
+                        src= "printicon.jpg" style="width:50px;height:50px;"
+                        alt= "printing">
+                    <h5>Cooperative Ltd</h5>
+                    <p>A shop that offers a reasonable price for printing services </p>
                 </div>
 
             </div>
 
             <div class="col-md-4">
                 <div class="box">
-                    <i class="fas fa-truck fa-2x mb-3 mt-4 text-primary"></i>
-                    <h5>Fast delivery</h5>
-                    <p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
+                <img class="fas fa-truck fa-2x mb-3 mt-4 text-primary"
+                        src= "printicon.jpg" style="width:50px;height:50px;"
+                        alt= "printing">
+                    <h5>Red Cafe</h5>
+                    <p>Cafe that located on level 1 Pusat Aktiviti Pelajar</p>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="box">
-                    <i class="fas fa-truck fa-2x mb-3 mt-4 text-primary"></i>
-                    <h5>Fast delivery</h5>
-                    <p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
+                <img class="fas fa-truck fa-2x mb-3 mt-4 text-primary"
+                        src= "printicon.jpg" style="width:50px;height:50px;"
+                        alt= "printing">
+                    <h5>Pekan Library</h5>
+                    <p>Printing services are on level 1</p>
                 </div>
             </div>
         </div>
@@ -187,17 +193,16 @@
     <br> <br>
 
     <div class="container cardItem" id="products">
-        <h2>Popular Products</h2>
+        <h2>Popular Packages</h2>
         <br>
         <div class="row">
             <div class="col-md-3">
                 <div class="card">
                     <img class="card-img-top img-fluid"
-                        src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/1.jpg"
+                        src="combbind.jpg" style="width:50px;height:50px;"
                         alt="Card image cap">
                     <div class="card-body">
-                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Just another item
-                                name</a></p>
+                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Comb Bind Notebook</a></p>
 
                         <div class="ratings">
                             <i class="fas fa-star text-warning"></i>
@@ -205,19 +210,25 @@
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-secondary"></i>
-                            <label class="text-secondary ml-3">34 reviews</label>
+                            <label class="text-secondary ml-3">30 reviews</label>
                         </div>
-                        <p class="card-cost">$179.00</p>
+                        <p class="card-cost">RM7.00</p>
+                        <a href="cart.php"><button>Add to Cart</button></a>
+                        <form action="/action_page.php">
+                         <input type="file" id="myFile" name="filename">
+                        <input type="submit">
+                        </form>
+
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card">
                     <img class="card-img-top img-fluid"
-                        src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/2.jpg"
+                        src="tapebind.jpg" style="width:50px;height:50px;"
                         alt="Card image cap">
                     <div class="card-body">
-                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Some item name here</a>
+                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Tape Bind Notebook</a>
                         </p>
                         <div class="ratings">
                             <i class="fas fa-star text-warning"></i>
@@ -225,19 +236,26 @@
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-secondary"></i>
-                            <label class="text-secondary ml-3">34 reviews</label>
+                            <label class="text-secondary ml-3">22 reviews</label>
                         </div>
-                        <p class="card-cost">$280.00</p>
+                        <p class="card-cost">RM5.00</p>
+                        <a href="cart.php"><button>Add to Cart</button></a>
+                        <form action="/action_page.php">
+                         <input type="file" id="myFile" name="filename">
+                        <input type="submit">
+                        </form>
+
+                        
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card">
                     <img class="card-img-top img-fluid"
-                        src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/3.jpg"
+                        src="thesis.jpg" style="width:50px;height:50px;"
                         alt="Card image cap">
                     <div class="card-body">
-                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Great item name here</a>
+                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Thesis Hard Cover</a>
                         </p>
                         <div class="ratings">
                             <i class="fas fa-star text-warning"></i>
@@ -245,29 +263,41 @@
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-secondary"></i>
-                            <label class="text-secondary ml-3">34 reviews</label>
+                            <label class="text-secondary ml-3">10 reviews</label>
                         </div>
-                        <p class="card-cost">$56.00</p>
+                        <p class="card-cost">RM15.00</p>
+                        <a href="cart.php"><button>Add to Cart</button></a>
+                        <form action="/action_page.php">
+                         <input type="file" id="myFile" name="filename">
+                        <input type="submit">
+                        </form>
+
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card">
                     <img class="card-img-top img-fluid"
-                        src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/4.jpg"
+                        src="Poster.jpg" style="width:50px;height:50px;"
                         alt="Card image cap">
                     <div class="card-body">
-                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Just another item
-                                name</a></p>
+                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Poster</a></p>
                         <div class="ratings">
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-secondary"></i>
-                            <label class="text-secondary ml-3">34 reviews</label>
+                            <label class="text-secondary ml-3">28 reviews</label>
                         </div>
-                        <p class="card-cost">$179.00</p>
+                        <p class="card-cost">RM8.00</p>
+                        <a href="cart.php"><button>Add to Cart</button></a>
+                        <form action="/action_page.php">
+                         <input type="file" id="myFile" name="filename">
+                        <input type="submit">
+                        </form>
+
+
                     </div>
                 </div>
             </div>
@@ -283,11 +313,10 @@
             <div class="col-md-3">
                 <div class="card">
                     <img class="card-img-top img-fluid"
-                        src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/5.jpg"
+                        src="certificate.jpg" style="width:50px;height:50px;"
                         alt="Card image cap">
                     <div class="card-body">
-                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Just another item
-                                name</a></p>
+                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Certificate Printing</a></p>
                         <div class="ratings">
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
@@ -296,129 +325,126 @@
                             <i class="fas fa-star text-secondary"></i>
                             <label class="text-secondary ml-3">34 reviews</label>
                         </div>
-                        <p class="card-cost">$179.00</p>
+                        <p class="card-cost">RM3.00</p>
+                        <a href="cart.php"><button>Add to Cart</button></a>
+                        <form action="/action_page.php">
+                         <input type="file" id="myFile" name="filename">
+                        <input type="submit">
+                        </form>
+
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img class="card-img-top img-fluid"
-                        src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/6.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Some item name here</a>
-                        </p>
-                        <div class="ratings">
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-secondary"></i>
-                            <label class="text-secondary ml-3">34 reviews</label>
-                        </div>
-                        <p class="card-cost">$280.00</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img class="card-img-top img-fluid"
-                        src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/7.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Great item name here</a>
-                        </p>
-                        <div class="ratings">
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-secondary"></i>
-                            <label class="text-secondary ml-3">34 reviews</label>
-                        </div>
-                        <p class="card-cost">$56.00</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img class="card-img-top img-fluid"
-                        src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/9.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Just another item
-                                name</a></p>
-                        <div class="ratings">
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-secondary"></i>
-                            <label class="text-secondary ml-3">34 reviews</label>
-                        </div>
-                        <p class="card-cost">$179.00</p>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
     <br><br>
     <div class="container cardItem" id="recommend">
         <div id="heading">
             <h2>Recommended</h2>
-            <button type="button" class="btn btn-outline-primary" id="float">See all</button>
         </div>
         <br>
         <div class="row">
             <div class="col-md-3">
                 <div class="card">
                     <img class="card-img-top img-fluid"
-                        src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/1.jpg"
+                        src="combbind.jpg" style="width:50px;height:50px;"
                         alt="Card image cap">
                     <div class="card-body">
-                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Just another item
-                                name</a></p>
+                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Comb Bind Notebook</a></p>
 
-                        <p class="card-cost">$179.00</p>
+                        <div class="ratings">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-secondary"></i>
+                            <label class="text-secondary ml-3">30 reviews</label>
+                        </div>
+                        <p class="card-cost">RM7.00</p>
+                        <a href="cart.php"><button>Add to Cart</button></a>
+                        <form action="/action_page.php">
+                         <input type="file" id="myFile" name="filename">
+                        <input type="submit">
+                        </form>
+
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card">
                     <img class="card-img-top img-fluid"
-                        src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/2.jpg"
+                        src="tapebind.jpg" style="width:50px;height:50px;"
                         alt="Card image cap">
                     <div class="card-body">
-                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Some item name here</a>
+                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Tape Bind Notebook</a>
                         </p>
+                        <div class="ratings">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-secondary"></i>
+                            <label class="text-secondary ml-3">22 reviews</label>
+                        </div>
+                        <p class="card-cost">RM5.00</p>
+                        <a href="cart.php"><button>Add to Cart</button></a>
+                        <form action="/action_page.php">
+                         <input type="file" id="myFile" name="filename">
+                        <input type="submit">
+                        </form>
 
-                        <p class="card-cost">$280.00</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card">
                     <img class="card-img-top img-fluid"
-                        src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/3.jpg"
+                        src="thesis.jpg" style="width:50px;height:50px;"
                         alt="Card image cap">
                     <div class="card-body">
-                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Great item name here</a>
+                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Thesis Hard Cover</a>
                         </p>
+                        <div class="ratings">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-secondary"></i>
+                            <label class="text-secondary ml-3">10 reviews</label>
+                        </div>
+                        <p class="card-cost">RM15.00</p>
+                        <a href="cart.php"><button>Add to Cart</button></a>
+                         <form action="/action_page.php">
+                         <input type="file" id="myFile" name="filename">
+                        <input type="submit">
+                        </form>
 
-                        <p class="card-cost">$56.00</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card">
                     <img class="card-img-top img-fluid"
-                        src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/4.jpg"
+                        src="Poster.jpg" style="width:50px;height:50px;"
                         alt="Card image cap">
                     <div class="card-body">
-                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Just another item
-                                name</a></p>
+                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Poster</a></p>
+                        <div class="ratings">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-secondary"></i>
+                            <label class="text-secondary ml-3">28 reviews</label>
+                        </div>
+                        <p class="card-cost">RM8.00</p>
+                        <a href="cart.php"><button>Add to Cart</button></a>
+                        <form action="/action_page.php">
+                         <input type="file" id="myFile" name="filename">
+                        <input type="submit">
+                        </form>
 
-                        <p class="card-cost">$179.00</p>
                     </div>
                 </div>
             </div>
@@ -427,58 +453,6 @@
 
     <br>
     <br>
-    <div class="container cardItem" id="brands">
-        <h2>Our Brands</h2>
-        <br>
-        <div class="row">
-            <div class="card">
-                <img class="card-img-top img-fluid"
-                    src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/logos/logo1.png" width="20%"
-                    style="padding: 0 35px;">
-                <hr>
-                <div class="card-body">
-                    <p class="card-text">36 Products</p>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top img-fluid"
-                    src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/logos/logo2.png" width="20%"
-                    style="padding: 0 35px;">
-                <hr>
-                <div class="card-body">
-                    <p class="card-text">980 Products</p>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top img-fluid"
-                    src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/logos/logo3.png" width="20%"
-                    style="padding: 0 35px;">
-                <hr>
-                <div class="card-body">
-                    <p class="card-text">25 Products</p>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top img-fluid"
-                    src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/logos/logo4.png" width="20%"
-                    style="padding: 0 35px;">
-                <hr>
-                <div class="card-body">
-                    <p class="card-text">72 Products</p>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top img-fluid"
-                    src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/logos/logo5.png" width="20%"
-                    style="padding: 0 35px;">
-                <hr>
-                <div class="card-body">
-                    <p class="card-text">41 Products</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
 
     <footer>
         <br><br>
@@ -503,42 +477,6 @@
         </div>
     </footer>
 
-
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-dark">
-                    <h5 class="modal-title text-light" id="exampleModalCenterTitle">Login</h5>
-                    <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body bg-light">
-                    <form>
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" placeholder="Enter Your Email">
-                            <small id="emailHelp" class="form-text text-danger">We'll never share your email with anyone
-                                else!</small>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" id="exampleInputPassword1"
-                                placeholder="Password">
-                        </div>
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Keep me Logined</label>
-                        </div>
-                        <button type="submit" class="btn btn-secondary btn-sm"><a href="profile.html"
-                                class="text-light">Login</a></button>
-                        <a href="register.php" class="float-right text-muted">Not a Member? Register</a>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
 </body>
 
 

@@ -52,7 +52,7 @@ if (isset($result)) {
         $_SESSION['SESS_NAME'] = $member['name'];
         $_SESSION['STATUS'] = true;
         session_write_close();
-        header("location: ../../(2)User/profile.html");
+        header("location: login-successful.php");
         exit();
     } else {
         //Login failed
